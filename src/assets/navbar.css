@@ -2,6 +2,9 @@
     .display-none-mobile {
         display: none;
     }
+    .displayNone {
+        display: none;
+    }
 }
 
 .navbar {
@@ -40,6 +43,7 @@
     left: -100%;
     background-color: #020222;
     transition: 0.5s;
+    z-index: 9;
 }
 
 .active {

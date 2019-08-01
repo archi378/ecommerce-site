@@ -51,6 +51,12 @@ select {
   }
 }
 
+@media only screen and (min-width:767px){
+  .floatRight {
+    float: right;
+  }
+}
+
 .banner-background {
   background-color: #bc8f8f;
 }
@@ -125,7 +131,10 @@ select {
   font-size: 20px;
   transition: all 1s linear;
 }
-
+.wishlist-btn-clicked {
+  color: #e40d0d;
+  transform: scale(1.2);
+}
 @media only screen and (min-width:992px) {
   /* .card:hover .wishlist-btn {
     display: block;

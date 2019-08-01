@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/navbar.css';
+import SearchBar from './SearchBar';
 import Logo from '../web-logo.png';
 
 export default class Navbar extends Component {
@@ -34,17 +35,20 @@ export default class Navbar extends Component {
                     </li>
                 </ul>
                 </div>
+                <div className="col-xs-12 col-md-4 col-lg-5 col-xl-6 displayNone">
+                            <SearchBar />
+                        </div>
                 <div className="slide-navbar" id="slide-navbar">
                     <button className="navbar-toggler" id="humberg" onClick={this.handleClick}>
                         <i className="fas fa-times"></i>
                     </button>
-                    <li className="nav-item">
+                    <li className="nav-item" onClick={this.handleClick}>
                         <Link to="/" className="nav-link"><i className="fas fa-home pr-3"></i>Home</Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item"  onClick={this.handleClick}>
                         <Link to="/ProductList" className="nav-link"><i className="fas fa-mobile-alt pr-3"></i>SmartPhones</Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item"  onClick={this.handleClick}>
                         <Link to="/" className="nav-link"><i className="fas fa-phone pr-3"></i>ContactUs</Link>
                     </li>
                 </div>

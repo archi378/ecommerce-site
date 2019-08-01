@@ -10,16 +10,14 @@ import { ProductConsumer } from '../context';
 export default class ProductList extends Component {
     state= {
          products:storeProducts,
-         filteredProduct:[]
+         filteredProduct:storeProducts
     }
     handleFilter = (e) => {
-        console.log('filtered');
         this.setState({filter:e.target.value});
-        this.sortProduct();
+        this.filterProducts();
     }
 
     handleSort = (e) => {
-        console.log('sorted');
         this.setState({sort:e.target.value});
         this.sortProduct();
     }
@@ -38,29 +36,31 @@ export default class ProductList extends Component {
             if(state.sort == 'Select'){
                 this.state.products.sort((a,b)=> a.id < b.id ? 1:-1)
             }
-            if(state.filter !== 'Filter'){
-                // if(state.filter == 'Goo'){
-                    console.log(state.filter) 
-            this.state.products.filter(a => a.company == state.filter)
-                   
-                    // console.log(state.filter)   
-                }
-            console.log(state.filteredProduct)
+        
             return {filteredProduct:this.state.products}
         })
     }
+    filterProducts = () => {
+        this.setState(state => {
+            if(state.filter !== 'Brand'){
+                   let products = state.products.filter(a => a.company == state.filter)
+                    return{filteredProduct:products}  
+                }
+            console.log(this.state.filteredProduct)
+        })        
+    }
     render() {
         let sortOption = ["Select","Low to High","High to Low"];
-        let filterOption = ["Filter","Samsung","Color","Memory"]
+        let filterOption = ["Brand","Samsung","Google","Apple","HTC","Xiaomi","OnePlus","Huawei","Nokia","Sony"]
         return (
             <React.Fragment>
                 <div className="container">
                     <div className="row">
-                        <div className="col-xs-12 col-md-6 col-lg-7">
+                        {/* <div className="col-xs-12 col-md-6 col-lg-7">
                             <SearchBar />
-                        </div>
-                        <div className="col-xs-12 col-md-6 col-lg-5 mt-3">
-                            <div className="d-flex justify-content-md-center padBottom" id="filter-section">
+                        </div> */}
+                        <div className="col-xs-12 col-md-12 col-lg-12 mt-3">
+                            <div className="d-flex padBottom floatRight" id="filter-section">
                                 <div className="col-xs-6 mr-2">
                                     <Select label={"Filter by"} options={filterOption} sort={this.state.filter} handleClick={this.handleFilter} />
                                 </div>
@@ -71,7 +71,7 @@ export default class ProductList extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <ProductConsumer>
+                        {/* <ProductConsumer>
                             {data =>{
                                 return(
                                     data.products.map(product =>{
@@ -81,7 +81,12 @@ export default class ProductList extends Component {
                                     })
                                 )
                             }}
-                        </ProductConsumer>
+                        </ProductConsumer> */}
+                        {this.state.filteredProduct.map(product => {
+                            return (
+                            <Product key={product.id} product={product} />)     
+                            })
+                        }
                     </div>
                 </div>
             </React.Fragment>
