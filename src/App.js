@@ -8,6 +8,7 @@ import ProductList from './components/ProductList';
 import ProductDetails from './components/ProductDetails';
 import Cart from './components/Cart';
 import PageNotFound from './components/PageNotFound';
+import Modal from './components/Modal';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/Cart" component={Cart} />
         <Route component={PageNotFound} />
       </Switch>
+      <Modal />
     </React.Fragment>
   );
 }

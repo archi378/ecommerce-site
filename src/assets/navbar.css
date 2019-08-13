@@ -5,34 +5,56 @@
     .displayNone {
         display: none;
     }
+    .navbar {
+        padding: 0;
+    }
 }
 
 .navbar {
-    background-color: #020222 !important;
+    /* background-color: #020222 !important; */
+    background-color: #CBEAEB !important;
+    justify-content: initial;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
 }
 
 .logo {
-    height: 40ps;
-    width: 50px;
+    /* margin-top: 10px; */
+    left: 50px;
+    width: 60px;
+    height: 45px;
+    overflow: hidden
+    /* position: absolute; */
+}
+.logo img {
+    width: 70px;
     margin-top: 10px;
 }
-
+.logotext {
+    font-family: cursive;
+    color: #ffb100;
+    font-weight: 600;
+    font-size: 17px;
+}
 .navbar button {
     border: none;
 }
 
 .navbar-nav {
     flex-direction: row;
-    padding-left: 50px;
+    padding-left: 15px;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: #ffc250;
-    padding-left: 30px !important;
+    color: #424553;
 }
 
 .nav-link:hover {
     color: #ffffff !important;
+}
+.nav-text {
+    color: #424553;
+    font-size: 11px;
+    /* color: #ffc250;  */
 }
 
 .slide-navbar {
@@ -41,17 +63,30 @@
     position: fixed;
     top: 0;
     left: -100%;
-    background-color: #020222;
+    background-color: #ffffff;
     transition: 0.5s;
-    z-index: 9;
+    z-index: 999;
 }
-
+.side-nav {
+    padding: 15px 25px;
+    width: 100%;
+    height: 70px;
+    background: #cbeaeb;
+    font-size: 25px;
+    font-family: cursive;
+    font-weight: 700;
+}
+.side-nav div {
+    height: 45px;
+    overflow: hidden;
+}
 .active {
     left: 0;
 }
 
 #humberg {
-    color: #ffc250;
+    color: #424553;
+    padding-left: 20px;
 }
 
 #humberg:hover .slide-navbar {
@@ -61,11 +96,11 @@
 .slide-navbar li {
     list-style-type: none;
     padding: 10px 20px;
-    border-bottom: 1px solid #252424;
+    border-bottom: 1px solid #969191;
 }
 
 .slide-navbar .nav-link {
-    color: #fff;
+    color: #424553;
 }
 
 .slide-navbar #humberg {
@@ -75,12 +110,11 @@
     top: 10px;
 }
 
-.cart {
-    background-color: #333375;
-    color: #ffc250;
-    padding: 2px;
+#account-info li:hover {
+    color: #ffffff !important;
+    cursor: pointer;
 }
-
-.cart:hover {
+#account-info a:hover {
+    text-decoration: none;
     color: #ffffff;
 }

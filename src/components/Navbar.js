@@ -15,13 +15,13 @@ export default class Navbar extends Component {
     }
     render() {
         return (
-            <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+            <nav className="navbar navbar-expand-md navbar-dark bg-dark">
             <button className="navbar-toggler" id="humberg" onClick={this.handleClick}>
                 <i className="fas fa-bars"></i>
             </button>
-                <Link to="/">
-                    <img src={Logo} className="logo" alt="minishop-logo" id="logo" />
-                </Link>
+                <Link to="/" className="logo">
+                    <img src={Logo}  alt="minishop-logo" id="logo" />
+                </Link><span className="logotext d-none d-md-block pt-2">MiniSHOP</span>
                 <div className="display-none-mobile" id="collapse_target">
                 <ul className="navbar-nav align-item-center">
                     <li className="nav-item">
@@ -35,13 +35,18 @@ export default class Navbar extends Component {
                     </li>
                 </ul>
                 </div>
-                <div className="col-xs-12 col-md-4 col-lg-5 col-xl-6 displayNone">
+                <div className="col-xs-12 col-md-4 col-lg-5 col-xl-5 displayNone">
                             <SearchBar />
                         </div>
                 <div className="slide-navbar" id="slide-navbar">
                     <button className="navbar-toggler" id="humberg" onClick={this.handleClick}>
                         <i className="fas fa-times"></i>
                     </button>
+                    <div className="side-nav">
+                    <div>
+                    <Link to="/" className="logo">
+                    <img src={Logo}  alt="minishop-logo" id="logo" />
+                    </Link><span className="logotext">MiniSHOP</span></div></div>
                     <li className="nav-item" onClick={this.handleClick}>
                         <Link to="/" className="nav-link"><i className="fas fa-home pr-3"></i>Home</Link>
                     </li>
@@ -52,11 +57,16 @@ export default class Navbar extends Component {
                         <Link to="/" className="nav-link"><i className="fas fa-phone pr-3"></i>ContactUs</Link>
                     </li>
                 </div>
-                <Link to="/cart" className="ml-auto">
-                <button className="cart">
-                    <i className="fas fa-cart-plus pr-2"></i>My Cart
-                </button>
-                </Link>
+                <ul id="account-info" className="navbar-nav position-absolute right25">
+                    <li className=" nav-item nav-text text-center text-font mx-2">
+                        <i className="material-icons d-block">bookmark_border</i><span className="d-none d-md-block">Wishlist</span>
+                    </li>
+                    <li className="nav-item text-center text-font mx-2">
+                        <Link to="/cart" className="nav-text" >
+                            <i className="material-icons d-block">work_outline</i><span className="d-none d-md-block">My Cart</span>
+                        </Link>
+                    </li>
+                </ul>
             </nav>
         )
     }
