@@ -22,7 +22,7 @@ export default class Modal extends Component {
                                     <h5 className="RobotoRegular">Item Added to the Cart</h5>
                                     <img src={img} alt="product" className="" />
                                     <h5  className="RobotoRegular">{title}</h5>
-                                    <p> Price : ${price}</p>
+                                    <p className="price-text-color"> Price : ₹{price}</p>
                                         <button className="continue-shopping text-font"
                                             onClick={()=>closeModal()}>Continue Shopping</button>
                                         <Link to="/Cart">

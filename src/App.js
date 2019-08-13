@@ -7,6 +7,7 @@ import HomePage from './components/HomePage';
 import ProductList from './components/ProductList';
 import ProductDetails from './components/ProductDetails';
 import Cart from './components/Cart';
+import Wishlist from './components/Wishlist';
 import PageNotFound from './components/PageNotFound';
 import Modal from './components/Modal';
 
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/ProductList" component={ProductList} />
         <Route exact path="/ProductDetails" component={ProductDetails} />
         <Route exact path="/Cart" component={Cart} />
+        <Route exact path="/Wishlist" component={Wishlist} />
         <Route component={PageNotFound} />
       </Switch>
       <Modal />

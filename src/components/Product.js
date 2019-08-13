@@ -12,7 +12,7 @@ export default class Product extends Component {
         console.log(id)
     }
     render() {
-        let { id, title, img, price, inCart, inWishlist, color}= this.props.product;
+        let { id, title, img, price, inCart, inWishlist, color, reviews}= this.props.product;
         return (
             <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                 <ProductConsumer>
@@ -59,11 +59,21 @@ export default class Product extends Component {
                             <span id={`"wishlist-effect-${id}"`} className="btn-position d-none"><WishlistBtn /></span>
                         </div>
                         <div className="card-body">
-                            <div className="card-footer d-flex justify-content-center">
+                            <div className="card-footer">
                             <Link to="/ProductDetails">
-                                <strong className="">{title}</strong>
+                                <strong className="pl-3">{title}</strong>
                             </Link>
-                            <span className=" price-text pl-3">${price}</span>
+                            <span className=" price-text price-text-color pl-3 d-block">₹&nbsp;{price}</span>
+                            <div className="pl-3 stars-outer">
+                            <i class="far fa-star review-text"></i>
+                            <i class="far fa-star review-text"></i>
+                            <i class="far fa-star review-text"></i>
+                            <i class="far fa-star review-text"></i>
+                            <i class="far fa-star review-text"></i>
+                                <div className="pl-3 stars-inner">
+                                </div>
+                            </div>
+                            <span className="pl-3 review-text">({reviews} Reviews )</span>
                             </div>
                         </div>
                     </div>

@@ -7,7 +7,7 @@ class ProductProvider extends Component {
     state= {
         products:[],
         detailProduct:detailProduct,
-        cart:storeProducts,
+        cart:[],
         wishlist:[],
         modalOpen:false,
         modalProduct:detailProduct,
@@ -49,7 +49,7 @@ class ProductProvider extends Component {
         product.total = price;
         this.setState(()=>{
             return{products:tempProducts,cart:[...this.state.cart,product]}
-        },()=> console.log(this.state))
+        },()=> {this.addTotals()})
     }
     addToWishlist = (id) => {
         console.log(`hello from wishlist ${id}`);
@@ -83,28 +83,77 @@ class ProductProvider extends Component {
     }
     increment = (id) => {
         console.log('incremented',id)
-        let tempProducts = [...this.state.products];
-        const index = tempProducts.indexOf(this.getItem(id));
-        const product = tempProducts[index];
-        product.count++
+        let tempCart = [...this.state.cart];
+        const selectedProduct = tempCart.find(item=>item.id===id);
+        const index = tempCart.indexOf(selectedProduct);
+        const product = tempCart[index];
+        product.count = product.count + 1;
+        product.total = product.price * product.count;
         this.setState(()=>{
-            return{products:tempProducts}
-        });
-        console.log(product.count)
+            return{cart:[...tempCart]}
+        },()=>{this.addTotals()});
     }
     decrement = (id) => {
         console.log('decremented',id);
-        const product = this.getItem(id);
-        if(product.count !==0){
-        product.count--
-        }
-        console.log(product.count)
+        let tempCart = [...this.state.cart];
+        const selectedProduct = tempCart.find(item=>item.id===id);
+        const index = tempCart.indexOf(selectedProduct);
+        const product = tempCart[index];
+        product.count = (product.count!== 1?product.count - 1:1);
+        product.total = product.price * product.count;
+        this.setState(()=>{
+            return{cart:[...tempCart]}
+        },()=>{this.addTotals()});
     }
     remove = (id) => {
         console.log('removed',id)
+        let tempProducts = [...this.state.products];
+        let tempCart = [...this.state.cart];
+        tempCart = tempCart.filter(item=> item.id !== id);
+        const index = tempProducts.indexOf(this.getItem(id));
+        let removedProduct = tempProducts[index];
+        removedProduct.inCart = false;
+        removedProduct.total = 0;
+        removedProduct.count = 0;
+        this.setState(()=> {
+            return{
+            cart:[...tempCart],
+            products:[...tempProducts]
+            }
+        },()=>{
+            this.addTotals();
+        })
+    }
+    removeWishlistItem = (id) => {
+        let tempProducts = [...this.state.products];
+        let tempWishlist = [...this.state.wishlist];
+        tempWishlist = tempWishlist.filter(item=> item.id !== id);
+        const index = tempProducts.indexOf(this.getItem(id));
+        let removedProduct = tempProducts[index];
+        removedProduct.inWishlist = false;
+        this.setState(()=> {
+            return{
+            wishlist:[...tempWishlist],
+            products:[...tempProducts]
+            }
+        })
     }
     clear = () => {
         console.log('cleared')
+    }
+    addTotals = () => {
+        let subTotal = 0;
+        this.state.cart.map(item => (subTotal += item.total));
+        const temptax = subTotal * 0.1;
+        const tax = parseFloat(temptax.toFixed(2));
+        const total = subTotal+tax;
+        this.setState(()=>{
+            return {
+            subTotal:subTotal,
+            tax:tax,
+            cartTotal:total
+            } 
+        })
     }
     render() {
         return (
@@ -119,6 +168,7 @@ class ProductProvider extends Component {
               increment:this.increment,
               decrement:this.decrement,
               remove:this.remove,
+              removeWishlistItem:this.removeWishlistItem,
               clear:this.clear
             }}>
                 {this.props.children}

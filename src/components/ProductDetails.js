@@ -31,7 +31,7 @@ export default class ProductDetails extends Component {
             <ProductConsumer>
                 {data =>{
                     let { id, title, img, price, inCart, color, colorType, memory, camera, images, thumb,
-                        thumb_target, specification, battery, processor} = data.detailProduct;
+                        thumb_target, specification, battery, processor, reviews} = data.detailProduct;
 
                     return (
                     <div>
@@ -90,7 +90,18 @@ export default class ProductDetails extends Component {
                         </div>
                         <div className="col-xs-12 col-md-6 px-4">
                             <h2 className="h2-Font NeueSerifBold">{title}</h2>
-                            <h4 className="h4-Font NeueSerifMedium"> Price ${price}</h4><hr></hr>
+                            <h4 className="h4-Font price-text-color"> Price: ₹{price}</h4>
+                            <div className="stars-outer">
+                            <i class="far fa-star review-text"></i>
+                            <i class="far fa-star review-text"></i>
+                            <i class="far fa-star review-text"></i>
+                            <i class="far fa-star review-text"></i>
+                            <i class="far fa-star review-text"></i>
+                                <div className="stars-inner">
+                                </div>
+                            </div>
+                            <span className="|review-text">({reviews} Reviews )</span>
+                            <hr></hr>
                             <div className="mt-3">
                             <label className="RobotoRegular">Select Color :</label>
                                 <div className=" col-xs-6 d-flex">

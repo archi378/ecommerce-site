@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../assets/navbar.css';
 import SearchBar from './SearchBar';
 import Logo from '../web-logo.png';
+import {ProductConsumer} from '../context';
 
 export default class Navbar extends Component {
 
@@ -57,16 +58,28 @@ export default class Navbar extends Component {
                         <Link to="/" className="nav-link"><i className="fas fa-phone pr-3"></i>ContactUs</Link>
                     </li>
                 </div>
-                <ul id="account-info" className="navbar-nav position-absolute right25">
-                    <li className=" nav-item nav-text text-center text-font mx-2">
-                        <i className="material-icons d-block">bookmark_border</i><span className="d-none d-md-block">Wishlist</span>
-                    </li>
-                    <li className="nav-item text-center text-font mx-2">
-                        <Link to="/cart" className="nav-text" >
-                            <i className="material-icons d-block">work_outline</i><span className="d-none d-md-block">My Cart</span>
-                        </Link>
-                    </li>
-                </ul>
+                <ProductConsumer>
+                    {data => {
+                        return (
+                            <ul id="account-info" className="navbar-nav position-absolute right25">
+                                <li className=" nav-item nav-text text-center text-font mx-2">
+                                <Link to="/Wishlist" className="nav-text" >
+                                    <i className="material-icons d-block">bookmark_border</i>
+                                    <span className={`nav-indicator wishlist-indicator ${data.wishlist.length?'d-block':'d-none'}`}>{data.wishlist.length}</span>
+                                    <span className="d-none d-md-block">Wishlist</span>
+                                    </Link>
+                                </li>
+                                <li className="nav-item text-center text-font mx-2">
+                                    <Link to="/cart" className="nav-text" >
+                                        <i className="material-icons d-block">work_outline</i>
+                                        <span className={`nav-indicator cart-indicator ${data.cart.length?'d-block':'d-none'}`}>{data.cart.length}</span>
+                                        <span className="d-none d-md-block">My Cart</span>
+                                    </Link>
+                                </li>
+                            </ul>
+                        )
+                    }}
+                </ProductConsumer>
             </nav>
         )
     }
