@@ -6,7 +6,7 @@ import SearchBar from './SearchBar';
 import Select from './Select';
 import {storeProducts,detailProduct} from '../data';
 import { ProductConsumer } from '../context';
-
+import Footer from './Footer'
 export default class ProductList extends Component {
     state= {
          products:storeProducts,
@@ -89,6 +89,7 @@ export default class ProductList extends Component {
                         }
                     </div>
                 </div>
+                <Footer />
             </React.Fragment>
         )
     }

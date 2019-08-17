@@ -649,3 +649,10 @@ ul.thumb li {
   top: -4px;
   right: 60px;
 }
+
+/*footer section*/
+.footer-container {
+  width: 100%;
+  height: 400px;
+  background-color: #343a40;
+}
