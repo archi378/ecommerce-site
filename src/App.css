@@ -132,6 +132,12 @@ option:not(:checked) {
     top: -4px !important;
     right: 40px !important;
   }
+  .filter-section-wrapper {
+    margin-top: 100px !important;
+  }
+  .wishlist-wrapper {
+    padding-top: 100px !important;
+  }
 }
 
 @media only screen and (min-width:767px) {

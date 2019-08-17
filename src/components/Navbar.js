@@ -17,51 +17,66 @@ export default class Navbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+            <div className="container-fluid nav-container d-flex d-md-block">
             <button className="navbar-toggler" id="humberg" onClick={this.handleClick}>
                 <i className="material-icons">menu</i>
             </button>
-                <Link to="/" className="logo">
-                    <img src={Logo}  alt="minishop-logo" id="logo" />
-                </Link><span className="logotext d-none d-md-block pt-2">MiniSHOP</span>
-                <div className="display-none-mobile" id="collapse_target">
-                <ul className="navbar-nav align-item-center">
-                    <li className="nav-item">
-                        <Link to="/" className="nav-link">Home</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/ProductList" className="nav-link">SmartPhones</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/" className="nav-link">ContactUs</Link>
-                    </li>
-                </ul>
+            {/* <div className="row">
+                <div className="col-md-8">
+                    <ul className="navbar-nav align-item-center">
+                        <li className="nav-item">
+                            <Link to="/" className="nav-link">Home&nbsp; &nbsp;|</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/ProductList" className="nav-link">About Us&nbsp; &nbsp;|</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/ProductList" className="nav-link">My Account&nbsp; &nbsp;|</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/" className="nav-link">Contact Us</Link>
+                        </li>
+                    </ul>
                 </div>
-                <div className="col-xs-12 col-md-4 col-lg-5 col-xl-5 displayNone">
-                            <SearchBar />
-                        </div>
-                <div className="slide-navbar" id="slide-navbar">
-                    <button className="navbar-toggler" id="humberg" onClick={this.handleClick}>
-                        <i className="material-icons">close</i>
-                    </button>
-                    <div className="side-nav">
-                    <div>
+                <div className="col-md-4">
+                    <ul className="navbar-nav profile-link align-item-center">
+                        <li className="nav-item">              
+                        <Link to="/" className="nav-link d-flex floatRight"><span><i class="material-icons">account_circle</i></span>Sign In | Register</Link>
+                        </li>
+                    </ul>
+                </div>
+            </div> */}
+            <div className="row logoWrapper">
+                <div className="col-md-8 col-lg-9 d-flex margin-top: -10px mobile-padding">
                     <Link to="/" className="logo">
-                    <img src={Logo}  alt="minishop-logo" id="logo" />
-                    </Link><span className="logotext">MiniSHOP</span></div></div>
-                    <li className="nav-item" onClick={this.handleClick}>
-                        <Link to="/" className="nav-link"><i className="fas fa-home pr-3"></i>Home</Link>
-                    </li>
-                    <li className="nav-item"  onClick={this.handleClick}>
-                        <Link to="/ProductList" className="nav-link"><i className="fas fa-mobile-alt pr-3"></i>SmartPhones</Link>
-                    </li>
-                    <li className="nav-item"  onClick={this.handleClick}>
-                        <Link to="/" className="nav-link"><i className="fas fa-phone pr-3"></i>ContactUs</Link>
-                    </li>
+                        <img src={Logo}  alt="minishop-logo" id="logo" />
+                    </Link><span className="logotext d-none d-md-block">iniSHOP</span>
                 </div>
+                <div className="col-xs-12 col-md-4 col-lg-3 pt-2 displayNone">
+                    <SearchBar />
+                </div>
+            </div>
+            <div className="row mobile-view">
+                <div className="col-md-8 d-none d-md-block pad0">
+                    <div className="" id="collapse_target">
+                        <ul className="navbar-nav align-item-center">
+                            <li className="nav-item">
+                                <Link to="/" className="nav-link">Home&nbsp; &nbsp;|</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/ProductList" className="nav-link">SmartPhones&nbsp; &nbsp;|</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/" className="nav-link">ContactUs</Link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="col-md-4 pad0">
                 <ProductConsumer>
                     {data => {
                         return (
-                            <ul id="account-info" className="navbar-nav position-absolute right25">
+                            <ul id="account-info" className="navbar-nav floatRight">
                                 <li className=" nav-item nav-text text-center text-font mx-2">
                                 <Link to="/Wishlist" className="nav-text" >
                                     <i className="material-icons d-block">bookmark_border</i>
@@ -80,6 +95,28 @@ export default class Navbar extends Component {
                         )
                     }}
                 </ProductConsumer>
+                </div>
+            </div>
+                <div className="slide-navbar" id="slide-navbar">
+                    <button className="navbar-toggler" id="humberg" onClick={this.handleClick}>
+                        <i className="material-icons">close</i>
+                    </button>
+                    <div className="side-nav">
+                    <div>
+                    <Link to="/" className="logo">
+                    <img src={Logo}  alt="minishop-logo" id="logo" />
+                    </Link><span className="logotext">iniSHOP</span></div></div>
+                    <li className="nav-item" onClick={this.handleClick}>
+                        <Link to="/" className="nav-link"><i className="fas fa-home pr-3"></i>Home</Link>
+                    </li>
+                    <li className="nav-item"  onClick={this.handleClick}>
+                        <Link to="/ProductList" className="nav-link"><i className="fas fa-mobile-alt pr-3"></i>SmartPhones</Link>
+                    </li>
+                    <li className="nav-item"  onClick={this.handleClick}>
+                        <Link to="/" className="nav-link"><i className="fas fa-phone pr-3"></i>ContactUs</Link>
+                    </li>
+                </div>
+                </div>
             </nav>
         )
     }

@@ -35,7 +35,7 @@ export default class ProductDetails extends Component {
 
                     return (
                     <div>
-                    <div className="row mt-5">
+                    <div className="row wishlist-wrapper">
                         <div className="col-xs-12 col-md-6 d-flex text-center">
                         <i  id='wishlist'  className="fas fa-heart pdp-wishlist-btn " onClick={this.handleWishlist}></i>
                             {/* <ul className="thumb">

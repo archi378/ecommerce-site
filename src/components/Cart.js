@@ -12,7 +12,7 @@ export default class Cart extends Component {
                     if(cart.length>0){
                         return(
                             <div id="cartPage" className="container-fluid p-lg-4 mobile-padding">
-                                <div className="row mobile-padding cart-wrapper">
+                                <div className="row mobile-padding wishlist-wrapper">
                                     <div className="col-xs-12 col-md-8 mobile-padding">
                                         <h6 className="pl-3 pb-md-3 mt-3 mt-md-0">My Shopping Cart</h6>
                                         <CartList value={data} />
