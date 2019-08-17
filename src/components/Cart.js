@@ -12,7 +12,7 @@ export default class Cart extends Component {
                     if(cart.length>0){
                         return(
                             <div id="cartPage" className="container-fluid p-lg-4 mobile-padding">
-                                <div className="row mobile-padding">
+                                <div className="row mobile-padding cart-wrapper">
                                     <div className="col-xs-12 col-md-8 mobile-padding">
                                         <h6 className="pl-3 pb-md-3 mt-3 mt-md-0">My Shopping Cart</h6>
                                         <CartList value={data} />
@@ -40,8 +40,8 @@ export default class Cart extends Component {
                     }
                     else{
                         return(
-                            <div className=" empty-cart d-flex justify-content-center mt-5 ">
-                            <div className="p-5 text-center">
+                            <div className=" empty-cart d-flex justify-content-center">
+                            <div className="p-5 text-center cart-wrapper">
                             <img src={emptyBag} alt="empty-cart" style={{width:'200px'}}/>
                                 <h4>Your Cart is Currently Empty</h4>
                                 </div>

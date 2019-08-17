@@ -18,7 +18,7 @@ export default class Navbar extends Component {
         return (
             <nav className="navbar navbar-expand-md navbar-dark bg-dark">
             <button className="navbar-toggler" id="humberg" onClick={this.handleClick}>
-                <i className="fas fa-bars"></i>
+                <i className="material-icons">menu</i>
             </button>
                 <Link to="/" className="logo">
                     <img src={Logo}  alt="minishop-logo" id="logo" />
@@ -41,7 +41,7 @@ export default class Navbar extends Component {
                         </div>
                 <div className="slide-navbar" id="slide-navbar">
                     <button className="navbar-toggler" id="humberg" onClick={this.handleClick}>
-                        <i className="fas fa-times"></i>
+                        <i className="material-icons">close</i>
                     </button>
                     <div className="side-nav">
                     <div>

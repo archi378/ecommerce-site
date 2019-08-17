@@ -5,7 +5,7 @@ export default class SearchBar extends Component {
         return (
             <div className="">
                 <div className="search-wrapper d-flex justify-content-center">
-                    <i className="fas fa-search"></i><input type="text" id="search" className="search-input" /> 
+                    <i className="material-icons search-icon">search</i><input type="text" id="search" className="search-input" /> 
                 </div>
             </div>
         )

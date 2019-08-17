@@ -11,19 +11,20 @@ export default class Wishlist extends Component {
                     if(data.wishlist.length>0){
                     return(
                         <div className="wishlistPage container-fluid">
+                            <div className="wishlist-wrapper">
                         {data.wishlist.map(item =>{
                              return(
                                 <WishlistItem key={item.id} item={item} value={data}/> 
                             )
                         })}
                             <div></div>
-                            
+                          </div>  
                         </div>
                     )}
                     else {
                         return(
-                            <div className=" empty-cart d-flex justify-content-center mt-5 ">
-                            <div className="p-5 text-center">
+                            <div className=" empty-cart d-flex justify-content-center">
+                            <div className="p-5 text-center cart-wrapper">
                             <img src={emptyBag} alt="empty-cart" style={{width:'200px'}}/>
                                 <h4>Your Wishlist is Currently Empty</h4>
                                 </div>

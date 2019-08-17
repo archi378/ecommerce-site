@@ -33,7 +33,7 @@ export default class Product extends Component {
                             }}
                              >
                                 {inCart? (<p className="text-capitalize width30" disabled>In Cart</p>)
-                                :( <i className="fas fa-cart-plus"></i>)}
+                                :('Add to Cart')}
                         </button>
                         <button className="addto-cart-btn-mobile d-lg-none btn-color"
                             disabled={inCart? true:false}
