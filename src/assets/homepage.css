@@ -1,0 +1,219 @@
+.homepage-wrapper {
+    padding-top: 100px;
+    overflow: hidden;
+    background: #000000;
+    position: relative;
+}
+.slider-section {
+    width: 100%;
+    overflow: hidden;
+}
+.slider-container {
+    position: relative;
+    width: 400%;
+    animation: slider 20s infinite;
+}
+.mySlides {
+    width:25%;
+    /* height: 570px; */
+    float: left;
+    overflow: hidden;
+}
+.mySlides h3 {
+    position: absolute;
+    top: 100px;
+    /* left: 50px; */
+    font-size: 4vw;
+    color: orange;
+    max-width: 10%;
+    /* font-weight: 400; */
+}
+.mySlides img {
+    width: 100%;
+    /* height: 570; */
+}
+.shop-btn {
+    position: absolute;
+    bottom: 50px;
+    /* left: 50px; */
+    right: 50px;
+    padding: 7px 20px;
+    background: #f08903;
+    border-radius: 3px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+}
+.shop-btn:hover {
+    background: #ff660a;
+}
+@keyframes slider {
+    0%  {left: 0%;}
+    20% {left: 0%;}
+    25% {left: -100%;}
+    45% {left: -100%;}
+    50% {left: -200%;}
+    55% {left: -200%;}
+    75% {left: -300%;}
+    100% {left: -300%}
+}
+/*section-2*/
+#product-card {
+    width: 100%;
+    /* height: 400px; */
+    padding: 20px;
+}
+#product-card .card {
+    width: 23%;
+}
+.card {
+    height: auto !important;
+}
+#product-card .card:hover {
+    transform: scale(1.2);
+}
+.card-body img {
+    width: 50%;
+}
+
+/* section-3*/
+.section-3 {
+    position: relative;
+}
+.section-3 .shop-btn {
+    left: 50px !important;
+}
+.featured-product {
+    background-color: #000000;
+    padding: 50px 30px;
+}
+
+.featured-title {
+    font-size: 4vw !important;
+    color: #ffffff;
+    text-transform: uppercase;
+    transform: rotate(-20deg)skew(25deg);
+    animation: animate 5s ease-in-out infinite;
+}
+.featured-img {
+    animation: animateImg 5s ease-in-out infinite;
+}
+@keyframes animate {
+    0% {
+        transform: rotate(-20deg)skew(25deg) translate(0,0); 
+        /* text-shadow: -5px 5px 0 rgba(0,0,0,0.2); */
+        text-shadow: -5px 5px 0 #2c2a2a;
+    }
+    50% {
+        transform: rotate(-20deg)skew(25deg) translate(50px,-50px); 
+        /* text-shadow: -50px 50px 0 rgba(0,0,0,0.2); */
+        text-shadow: -50px 50px 0 #2c2a2a;
+    }
+}
+@keyframes animateImg {
+    0% {
+        transform: translate(0,0); 
+        /* text-shadow: -5px 5px 0 rgba(0,0,0,0.2); */
+        /* box-shadow: -5px 5px 0 #2c2a2a; */
+    }
+    50% {
+        transform: translate(0px,-50px); 
+        /* text-shadow: -50px 50px 0 rgba(0,0,0,0.2); */
+        /* box-shadow: -50px 50px 0 #2c2a2a; */
+    }
+}
+
+/*section 4*/
+#section-4 {
+    position: relative;
+}
+#section-4::after {
+    content: '';
+    width: 100%;
+    display: block;
+}
+#section-4 .row {
+    position: absolute;
+    /* position: absolute; */
+    width: 200%;
+    animation: cardSwap 8s linear infinite;
+}
+#section-4 .row .card {
+  flex: 1;
+  min-width: 200px;
+}
+
+@keyframes cardSwap {
+    0% {
+        left: 0%;
+    }
+    40% {
+        left: 0%;
+    }
+    45% {
+        left: -100%;
+    }
+   100% {
+       left: -100%;
+   }
+}
+
+@media only screen and (max-width:767px) {
+    .mySlides h3 {
+        top: 8vh;
+        /* left: 50px; */
+        font-size: 5vw;
+        max-width: 15%;
+        /* font-weight: 400; */
+    }
+    .shop-btn {
+        font-size: 2vw;
+        bottom: 20px;
+        /* left: 50px; */
+        right: 30px;
+    }
+    #product-card .card {
+        width: 50% !important;
+    }
+    .promotion-title {
+        font-size: 5vw;
+    }
+    .brand-title {
+        font-size: 4vw;
+    }
+    .featured-title {
+        font-size: 5vw !important;
+    }
+    @keyframes animateImg {
+        0% {
+            /* text-shadow: -5px 5px 0 rgba(0,0,0,0.2); */
+            box-shadow: 0px 5px 0 #2c2a2a !important;
+        }
+        50% {
+            transform: translate(0px,-50px); 
+            /* text-shadow: -50px 50px 0 rgba(0,0,0,0.2); */
+            box-shadow: 0px 50px 0 #2c2a2a !important;
+        }
+    }
+    @keyframes animate {
+        0% {
+            transform: rotate(-20deg)skew(25deg) translate(0,0); 
+            /* text-shadow: -5px 5px 0 rgba(0,0,0,0.2); */
+            text-shadow: 0 !important;
+        }
+        50% {
+            transform: rotate(-20deg)skew(25deg) translate(50px,-50px); 
+            /* text-shadow: -50px 50px 0 rgba(0,0,0,0.2); */
+            text-shadow: 0 !important;
+        }
+    }
+}
+@media only screen and (min-width:768px) and (max-width:1024px){
+    .mySlides h3 {
+        top: 70px;
+        /* left: 50px; */
+        font-size: 5vw;
+        max-width: 15%;
+        /* font-weight: 400; */
+    }
+}
