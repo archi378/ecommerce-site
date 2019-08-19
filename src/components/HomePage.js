@@ -11,10 +11,42 @@ import oneplus from '../assets/images/oneplus.jpg';
 import samsung from '../assets/images/samsung.png';
 import google from '../assets/images/google.jpg';
 import featuredProduct from '../assets/images/iphoneX.1.jpg';
+import {ProductConsumer} from '../context';
+import {storeProducts,detailProduct} from '../data';
 
 
 export default class HomePage extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            products:storeProducts,
+            currentProduct:storeProducts[0]
+        }
+    }
+   nextProduct = () => {
+       let newIndex = this.state.currentProduct.id+1;
+       console.log(this.state.currentProduct.id)
+       this.setState(()=>{
+           return{
+           currentProduct:this.state.products[newIndex]
+           }
+       })
+   }
+   prevProduct = () => {
+        let newIndex = this.state.currentProduct.id-2;
+        console.log(this.state.currentProduct.id)
+        this.setState(()=>{
+            return{
+            currentProduct:this.state.products[newIndex]
+            }
+        })
+    }
+    // componentDidMount(){
+    //     let slider = document.getElementById('product-slider');
+    //     if()
+    // }
     render() {
+        const {products,currentProduct}=this.state;
         return (
             <div>
                         {/* Section 1 */}
@@ -33,7 +65,7 @@ export default class HomePage extends Component {
                             <img src={promotionalImg3} alt="promotional" />
                             <h3 className="pl-md-5 pl-3">We have brought you the latest trend with amazing deals...</h3>
                         </div>
-                        <div class="mySlides">
+                        <div className="mySlides">
                             <img src={promotionalImg4} alt="promotional" />
                             <h3 className="pl-md-5 pl-3">Don't stop and Click on shop Now for getting your Dreams true...</h3>
                         </div>
@@ -47,7 +79,7 @@ export default class HomePage extends Component {
                 <div className="d-block text-center">
                     <h1 className="p-3 promotion-title">__Our Top Brands__</h1>
                 </div>
-                <div id="product-card" class="container-fluid justify-content-around">
+                <div id="product-card" className="container-fluid justify-content-around">
                 <div className="row d-flex justify-content-around">
                     <div className="card mb-2">
                         <div className="card-title pt-2 text-center"><h4 className="brand-title ">Apple</h4></div>
@@ -101,11 +133,36 @@ export default class HomePage extends Component {
                 
                             {/* Section 4 */}
                 <div className="d-block text-center">
-                    <h1 className="p-3 promotion-title">__Our Top Brands__</h1>
+                    <h1 className="p-3 promotion-title">__Our Top Sellers__</h1>
                 </div>
-                <div id="section-4" class="">
-                <div className="row d-flex">
-                    <div className="card mb-2">
+                <div id="section-4" className="">
+                <div>
+                {/* <button className="button-wrapper left-btn"
+                    onClick={this.prevProduct}
+                    disabled={currentProduct.id === 1?true:false}
+                ><i className="material-icons">arrow_back_ios</i></button>
+                <button className="button-wrapper right-btn"
+                    onClick={this.nextProduct}
+                    disabled={currentProduct.id && currentProduct.id === storeProducts.length-1? true:false}
+                ><i className="material-icons">arrow_forward_ios</i></button> */}
+                </div>
+                    <div id="product-slider" className="d-flex card-wrapper" 
+                        style={{transform:`translateX(-${(currentProduct.id*(100/products.length))}%)`}}>
+                            {products.map(product =>{
+                                return(
+                                    <div className="card mb-2">
+                                    <div className="card-title pt-2 text-center"><h4 className="brand-title ">{product.title}</h4></div>
+                                    <div className="card-body text-center">
+                                        <img src={product.img} alt="apple-product" />
+                                    </div>
+                                    <div className="card-footer"></div>
+                                </div>
+                                )
+                            })
+                        }
+                    </div>
+                  </div>
+                    {/* <div className="card mb-2">
                         <div className="card-title pt-2 text-center"><h4 className="brand-title ">Apple</h4></div>
                         <div className="card-body text-center">
                             <img src={apple} alt="apple-product" />
@@ -160,14 +217,7 @@ export default class HomePage extends Component {
                             <img src={google} alt="oneplus-product" />
                         </div>
                         <div className="card-footer"></div>
-                    </div>
-                </div>
-                </div>
-
-
-                <footer>
-                    <Footer />
-               </footer>
+                    </div> */}
             </div>
         )
     }

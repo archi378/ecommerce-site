@@ -10,6 +10,7 @@ import Cart from './components/Cart';
 import Wishlist from './components/Wishlist';
 import PageNotFound from './components/PageNotFound';
 import Modal from './components/Modal';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route component={PageNotFound} />
       </Switch>
       <Modal />
+      <Footer />
     </React.Fragment>
   );
 }

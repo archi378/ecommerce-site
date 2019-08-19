@@ -65,11 +65,11 @@ export default class Product extends Component {
                             </Link>
                             <span className=" price-text price-text-color pl-3 d-block">₹&nbsp;{price}</span>
                             <div className="pl-3 stars-outer">
-                            <i class="far fa-star review-text"></i>
-                            <i class="far fa-star review-text"></i>
-                            <i class="far fa-star review-text"></i>
-                            <i class="far fa-star review-text"></i>
-                            <i class="far fa-star review-text"></i>
+                            <i className="far fa-star review-text"></i>
+                            <i className="far fa-star review-text"></i>
+                            <i className="far fa-star review-text"></i>
+                            <i className="far fa-star review-text"></i>
+                            <i className="far fa-star review-text"></i>
                                 <div className="pl-3 stars-inner">
                                 </div>
                             </div>
