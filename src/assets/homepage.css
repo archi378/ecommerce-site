@@ -47,6 +47,9 @@
 .shop-btn:hover {
     background: #ff660a;
 }
+.brand-title {
+    font-size: 20px;
+}
 @keyframes slider {
     0%  {left: 0%;}
     20% {left: 0%;}
@@ -253,9 +256,6 @@
     }
     .promotion-title {
         font-size: 5vw;
-    }
-    .brand-title {
-        font-size: 3vw;
     }
     .featured-title {
         font-size: 5vw !important;
