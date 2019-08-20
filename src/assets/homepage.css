@@ -160,9 +160,11 @@
 }
 #section-4 .card {
   flex: 1;
-  min-width: 250px;
+  /* min-width: 250px; */
 }
-
+#section-4 .card img {
+    /* max-height: 250px; */
+}
 @keyframes cardSwap {
     0% {
         left: 0%;
@@ -243,13 +245,14 @@
         font-size: 5vw;
     }
     .brand-title {
-        font-size: 4vw;
+        font-size: 3vw;
     }
     .featured-title {
         font-size: 5vw !important;
     }
-    #section-4 .card {
-        min-width: 160px !important;
+    #section-4 .card img {
+        /* min-width: 160px !important; */
+        /* height: 30vh; */
     }
     @keyframes animateImg {
         0% {
