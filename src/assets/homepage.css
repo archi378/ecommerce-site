@@ -82,6 +82,7 @@
 }
 .section-3 .shop-btn {
     left: 50px !important;
+    max-width: 125px !important;
 }
 .featured-product {
     background-color: #000000;
