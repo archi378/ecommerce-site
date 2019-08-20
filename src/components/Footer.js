@@ -5,7 +5,7 @@ import trust from '../assets/images/original.jpg'
 import facebook from '../assets/images/facebook.png'
 import twitter from '../assets/images/twitter.png'
 import instagram from '../assets/images/insta.jpg'
-import {Link} from 'react-router-dom'
+
 
 export default class Footer extends Component {
     render() {
@@ -21,9 +21,9 @@ export default class Footer extends Component {
                     </ul>
                     <ul><span className="">Follow Us</span>
                         <div className="d-flex pt-3 align-items-center social-links">
-                            <Link to="https://www.facebook.com/"><li><img src={facebook} alt="facebook" className="img-fluid"/></li></Link>
-                            <Link to="https://twitter.com/"><li><img src={twitter} alt="twitter" className="img-fluid ml-3" style={{width:'50px'}}/></li></Link>
-                            <Link to="https://www.instagram.com/"><li><img src={instagram} alt="instagram" className="img-fluid ml-3" style={{width:'30px'}}/></li></Link>
+                            <li><a href="https://www.facebook.com/" target='_blank'><img src={facebook} alt="facebook" className="img-fluid"/></a></li>
+                            <li><a href="https://twitter.com/"  target='_blank'><img src={twitter} alt="twitter" className="img-fluid ml-3" style={{width:'50px'}}/></a></li>
+                            <li><a href="https://www.instagram.com/"  target='_blank'><img src={instagram} alt="instagram" className="img-fluid ml-3" style={{width:'30px'}}/></a></li>
                         </div>
                     </ul>
                 </div>
