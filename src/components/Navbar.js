@@ -14,10 +14,17 @@ export default class Navbar extends Component {
         // slideNav.style.display = (slideNav.style.width != '0' ? '0' : ' ' );
         slideNav.classList.toggle('active');
     }
+    handleSearch =()=> {
+        let element = document.getElementById('searchbox');
+        // element.style.display = (element.style.display != 'block' ? 'block' : 'none' );
+        // slideNav.style.display = (slideNav.style.width != '0' ? '0' : ' ' );
+        element.classList.toggle('activeRight');
+        console.log('search')
+    }
     render() {
         return (
             <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-            <div className="container-fluid nav-container d-flex d-md-block">
+            <div className="container-fluid nav-container d-flex d-md-block pl-3">
             <button className="navbar-toggler" id="humberg" onClick={this.handleClick}>
                 <i className="material-icons">menu</i>
             </button>
@@ -46,8 +53,8 @@ export default class Navbar extends Component {
                     </ul>
                 </div>
             </div> */}
-            <div className="row logoWrapper">
-                <div className="col-md-8 col-lg-9 d-flex margin-top: -10px mobile-padding">
+            <div className="row">
+                <div className="col-md-8 col-lg-9 d-flex margin-top: -10px mobile-padding logoWrapper">
                     <Link to="/" className="logo">
                         <img src={Logo}  alt="minishop-logo" id="logo" />
                     </Link><span className="logotext d-none d-md-block">iniSHOP</span>
@@ -76,7 +83,10 @@ export default class Navbar extends Component {
                 <ProductConsumer>
                     {data => {
                         return (
-                            <ul id="account-info" className="navbar-nav floatRight">
+                            <ul id="account-info" className="navbar-nav floatRight d-flex align-items-center">
+                                <li className="d-flex search-outer d-md-none"><input type="text" id="searchbox" className="search-input" />
+                                    <i className="material-icons search-icon pt-2" onClick={this.handleSearch}>search</i>
+                                </li>
                                 <li className=" nav-item nav-text text-center text-font mx-2">
                                 <Link to="/Wishlist" className="nav-text" >
                                     <i className="material-icons d-block">bookmark_border</i>

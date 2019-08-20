@@ -140,6 +140,26 @@ option:not(:checked) {
   .wishlist-wrapper {
     padding-top: 100px !important;
   }
+  .search-outer {
+    overflow: hidden;
+  }
+  .search-icon {
+    padding: 0;
+    font-size: 30px;
+  }
+  .search-input {
+    position: relative;
+    width: 105px !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    right: -100%;
+    transition: 1s;
+  }
+  .activeRight {
+    right: 0;
+  }
+  .navbar-toggler {
+    padding: 0 !important;
+  }
 }
 
 @media only screen and (min-width:767px) {
@@ -160,6 +180,12 @@ option:not(:checked) {
   .footer-container ul {
     border-bottom: 0 !important;
     padding-bottom: 20px !important;
+  }
+  .search-icon {
+    padding-top: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: #dee2e6;
   }
 }
 
@@ -192,12 +218,7 @@ option:not(:checked) {
   padding-right: 8px;
   background-color: #dee2e6;
 } */
-.search-icon {
-  padding-top: 5px;
-  padding-left: 8px;
-  padding-right: 8px;
-  background-color: #dee2e6;
-}
+
 /* #filter-section select {
   border: none;
   background-color: #dfe2e4e3;
