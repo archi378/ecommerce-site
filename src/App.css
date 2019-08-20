@@ -476,7 +476,9 @@ ul.thumb li {
 } */
 
 /*mobile product slider*/
-
+#product-detail {
+  overflow-x: hidden;
+}
 #product-detail .slider-container-pdp {
   width: 100%;
   position: relative;
