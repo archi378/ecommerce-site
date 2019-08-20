@@ -146,7 +146,7 @@ export default class HomePage extends Component {
                     disabled={currentProduct.id && currentProduct.id === storeProducts.length-1? true:false}
                 ><i className="material-icons">arrow_forward_ios</i></button> */}
                 </div>
-                    <div id="product-slider" className="d-flex card-wrapper" 
+                    {/* <div id="product-slider" className="d-flex card-wrapper" 
                         style={{transform:`translateX(-${(currentProduct.id*(100/products.length))}%)`}}>
                             {products.map(product =>{
                                 return(
@@ -160,7 +160,7 @@ export default class HomePage extends Component {
                                 )
                             })
                         }
-                    </div>
+                    </div> */}
                   </div>
                     {/* <div className="card mb-2">
                         <div className="card-title pt-2 text-center"><h4 className="brand-title ">Apple</h4></div>
