@@ -477,7 +477,7 @@ ul.thumb li {
 
 /*mobile product slider*/
 
-.slider-container {
+#product-detail .slider-container-pdp {
   width: 100%;
   position: relative;
   /* top: 50%;

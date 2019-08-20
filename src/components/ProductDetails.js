@@ -35,7 +35,7 @@ export default class ProductDetails extends Component {
 
                     return (
                     <div>
-                    <div className="row wishlist-wrapper">
+                    <div id="product-detail" className="row wishlist-wrapper">
                         <div className="col-xs-12 col-md-6 d-flex text-center">
                         <i  id='wishlist'  className="fas fa-heart pdp-wishlist-btn " onClick={this.handleWishlist}></i>
                             {/* <ul className="thumb">
@@ -74,7 +74,7 @@ export default class ProductDetails extends Component {
 
                             {/* for mobile view image slider*/}
 
-                            <div className="slider-container text-center d-md-none d-sm-block">
+                            <div className="slider-container-pdp text-center d-md-none d-sm-block">
                                 <div className="slider-wrapper">
                                     <section className="slides"><img src={thumb_target[0]} className="height300 width200" /></section>
                                     <section className="slides"><img src={thumb_target[1]} className="height300 width200" /></section>
