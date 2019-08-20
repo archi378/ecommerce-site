@@ -289,7 +289,7 @@ option:not(:checked) {
   }
   .addto-cart-btn {
     position: absolute;
-    bottom: 102px;
+    bottom: 87px;
     left: 0px;
     display: block;
     border-top-right-radius: 10px;
@@ -587,10 +587,12 @@ ul.thumb li {
 /*cart*/
 .cart-wrapper {
   margin-top: 125px;
+  min-height: 100vh;
 }
 .wishlist-wrapper {
   position: relative;
   padding-top: 125px;
+  min-height: 100vh;
 }
 .btn-cart {
   border: 1px solid #000000 !important;
