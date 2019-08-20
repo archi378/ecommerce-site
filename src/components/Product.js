@@ -41,6 +41,7 @@ export default class Product extends Component {
                                 data.addToCart(id);
                                 const product = data.getItem(id);
                                 inCart = product.inCart
+                                data.openModal(id);
                             }} 
                         >
                         {inCart? <i className="fas fa-cart-arrow-down inCart"></i>
