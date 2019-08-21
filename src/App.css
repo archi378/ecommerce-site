@@ -178,7 +178,7 @@ option:not(:checked) {
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%)
   }
   .footer-container .footer-links {
     min-height: 300px;
