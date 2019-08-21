@@ -69,7 +69,7 @@
 }
 #product-card .card {
     width: 23%;
-    height: 363px;
+    /* height: 363px; */
     display: initial !important;
 }
 #product-card .card .card-footer {
