@@ -133,8 +133,12 @@
     padding-left: 30px;
     padding-right: 30px;
     width: 100%;
-    overflow: hidden;
-
+    overflow: scroll;
+    display: flex;
+    -webkit-overflow-scrolling: touch; 
+}
+#section-4::-webkit-scrollbar {
+    display: none; 
 }
 .button-wrapper {
     position: absolute;
@@ -173,9 +177,14 @@
     height: 100% !important;
 }
 #section-4 .product-slider-wrapper {
-    min-width: 250px;
-    height: 350px;
+    min-width: 225px;
+    height: 300px;
     margin: 10px;
+}
+#section-4 .card img {
+    /* min-width: 160px !important; */
+    /* height: 30vh; */
+    width: 40% !important;
 }
 
 @keyframes cardSwap {
@@ -260,10 +269,7 @@
     .featured-title {
         font-size: 5vw !important;
     }
-    #section-4 .card img {
-        /* min-width: 160px !important; */
-        /* height: 30vh; */
-    }
+    
     @keyframes animateImg {
         0% {
             /* text-shadow: -5px 5px 0 rgba(0,0,0,0.2); */
