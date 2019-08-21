@@ -140,7 +140,6 @@ export default class HomePage extends Component {
                     <h1 className="p-3 promotion-title">__Our Top Sellers__</h1>
                 </div>
                 <div id="section-4" className="">
-                <div>
                 {/* <button className="button-wrapper left-btn"
                     onClick={this.prevProduct}
                     disabled={currentProduct.id === 1?true:false}
@@ -148,8 +147,7 @@ export default class HomePage extends Component {
                 <button className="button-wrapper right-btn"
                     onClick={this.nextProduct}
                     disabled={currentProduct.id && currentProduct.id === storeProducts.length-1? true:false}
-                ><i className="material-icons">arrow_forward_ios</i></button> */}
-                </div>
+                    ><i className="material-icons">arrow_forward_ios</i></button> */}
                     <div id="product-slider" className="d-flex card-wrapper" >
                             {products.map(product =>{
                                 return(

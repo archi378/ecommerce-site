@@ -134,8 +134,8 @@
     padding-left: 30px;
     padding-right: 30px;
     width: 100%;
-    /* overflow: scroll; */
-    display: flex;
+    overflow: scroll;
+    /* display: flex; */
     /* -webkit-overflow-scrolling: touch;  */
 }
 #section-4::-webkit-scrollbar {
