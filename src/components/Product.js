@@ -14,7 +14,7 @@ export default class Product extends Component {
     render() {
         let { id, title, img, price, inCart, inWishlist, color, reviews}= this.props.product;
         return (
-            <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+            <div id="productList" className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                 <ProductConsumer>
                     {data => (
                         <div className="card mb-3">

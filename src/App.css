@@ -244,18 +244,18 @@ option:not(:checked) {
   width: 130px;
 }
 
-.card {
-  height: 400px;
+#productList .card {
+  height: 400px !important;
   border: 1px solid #D8DADA;
   box-shadow: 2px 2px 5px 0 rgb(0, 0, 0, 0.2);
   transition: all 1s linear;
 }
 
-.card-img {
+#productList .card-img {
   transition: all 0.5s linear;
 }
 
-.card-body {
+#productList .card-body {
   padding: 0;
 }
 
@@ -317,7 +317,7 @@ option:not(:checked) {
   }
   .addto-cart-btn {
     position: absolute;
-    bottom: 87px;
+    bottom: 103px;
     left: 0px;
     display: block;
     border-top-right-radius: 10px;

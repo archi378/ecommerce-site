@@ -50,6 +50,9 @@ export default class ProductList extends Component {
                    let products = state.products.filter(a => a.company == state.filter)
                     return{filteredProduct:products,sort: 'Select'}  
                 }
+            else {
+                return {filteredProduct:storeProducts}
+            }
                 
         })        
     }
