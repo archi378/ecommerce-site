@@ -136,7 +136,7 @@
     width: 100%;
     /* overflow: scroll; */
     display: flex;
-    -webkit-overflow-scrolling: touch; 
+    /* -webkit-overflow-scrolling: touch;  */
 }
 #section-4::-webkit-scrollbar {
     display: none; 
