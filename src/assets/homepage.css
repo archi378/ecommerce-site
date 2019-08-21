@@ -137,6 +137,7 @@
     padding-right: 30px;
     width: 100%;
     overflow: scroll;
+    -ms-overflow-style: none;
     /* display: flex; */
     /* -webkit-overflow-scrolling: touch;  */
 }
@@ -180,11 +181,16 @@
 #section-4 .card {
     /* max-height: 250px; */
     height: 100% !important;
+    display: initial !important;
 }
 #section-4 .product-slider-wrapper {
     min-width: 225px;
     height: 275px;
     margin: 10px;
+    position: relative;
+}
+#section-4 .product-slider-wrapper .card-footer {
+    border: none;
 }
 #section-4 .card img {
     /* min-width: 160px !important; */
