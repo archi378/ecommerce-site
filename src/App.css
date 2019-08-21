@@ -145,7 +145,13 @@ option:not(:checked) {
   }
   .search-icon {
     padding: 0;
-    font-size: 30px;
+    padding-bottom: 5px;
+    font-size: 27px !important;
+  }
+  #searchbox-wrapper {
+    overflow: hidden;
+    position: relative;
+    padding-top: 10px;
   }
   .search-input {
     position: relative;
@@ -153,6 +159,7 @@ option:not(:checked) {
     border-bottom: 1px solid #dee2e6 !important;
     right: -100%;
     transition: 1s;
+    color: #ffffff;
   }
   .activeRight {
     right: 0;

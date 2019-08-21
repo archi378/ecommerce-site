@@ -84,8 +84,10 @@ export default class Navbar extends Component {
                     {data => {
                         return (
                             <ul id="account-info" className="navbar-nav floatRight d-flex align-items-center">
-                                <li className="d-flex search-outer d-md-none"><input type="text" id="searchbox" className="search-input" />
-                                    <i className="material-icons search-icon pt-2" onClick={this.handleSearch}>search</i>
+                                <li className="d-flex search-outer d-md-none">
+                                    <span id="searchbox-wrapper" >
+                                        <input type="text" id="searchbox" placeholder="search" className="search-input" /></span>
+                                    <i className="material-icons search-icon pt-2 nav-text" onClick={this.handleSearch}>search</i>
                                 </li>
                                 <li className=" nav-item nav-text text-center text-font mx-2">
                                 <Link to="/Wishlist" className="nav-text" >
