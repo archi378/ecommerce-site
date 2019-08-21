@@ -4,6 +4,10 @@ import emptyBag from '../empty-cart.jpg';
 import CartList from './CartList';
 
 export default class Cart extends Component {
+
+    componentWillMount() {
+        window.scroll(0,0)
+    }
     render() {
         return (
             <ProductConsumer>

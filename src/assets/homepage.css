@@ -49,6 +49,7 @@
 }
 .brand-title {
     font-size: 20px;
+    color: #000000;
 }
 @keyframes slider {
     0%  {left: 0%;}

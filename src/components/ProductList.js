@@ -12,6 +12,11 @@ export default class ProductList extends Component {
          products:storeProducts,
          filteredProduct:storeProducts
     }
+
+    componentWillMount() {
+        window.scroll(0,0)
+    }
+
     handleFilter = (e) => {
         this.setState({filter:e.target.value});
         this.filterProducts();

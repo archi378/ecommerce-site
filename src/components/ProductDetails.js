@@ -6,7 +6,10 @@ export default class ProductDetails extends Component {
     state = {
         sliderIndex:0
     }
-    componentDidMount(){
+    componentWillMount() {
+        window.scroll(0,0)
+    }
+    componentDidMount(){ 
         document.getElementById('imgBox').src = document.getElementById('thumb1').value;
     }
     onMouseOverEvent = (e) => {

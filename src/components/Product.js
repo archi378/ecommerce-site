@@ -4,6 +4,10 @@ import {ProductConsumer} from '../context';
 import WishlistBtn from './WishlistBtn';
 
 export default class Product extends Component {
+    componentWillMount() {
+        window.scroll(0,0)
+      }
+
     handleWishlist = (id) =>{
         let wishlist = document.getElementById(`"wishlist-${id}"`);
         let wishlistEffect = document.getElementById(`"wishlist-effect-${id}"`);

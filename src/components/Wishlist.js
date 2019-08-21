@@ -4,6 +4,9 @@ import WishlistItem from './WishlistItem';
 import emptyBag from '../empty-cart.jpg';
 
 export default class Wishlist extends Component {
+    componentWillMount() {
+        window.scroll(0,0)
+    }
     render() {
         return (
             <ProductConsumer>

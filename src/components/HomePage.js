@@ -23,24 +23,28 @@ export default class HomePage extends Component {
             currentProduct:storeProducts[0]
         }
     }
-   nextProduct = () => {
-       let newIndex = this.state.currentProduct.id+1;
-       console.log(this.state.currentProduct.id)
-       this.setState(()=>{
-           return{
-           currentProduct:this.state.products[newIndex]
-           }
-       })
-   }
-   prevProduct = () => {
-        let newIndex = this.state.currentProduct.id-2;
-        console.log(this.state.currentProduct.id)
-        this.setState(()=>{
-            return{
-            currentProduct:this.state.products[newIndex]
-            }
-        })
+    componentWillMount() {
+        window.scroll(0,0)
     }
+
+//    nextProduct = () => {
+//        let newIndex = this.state.currentProduct.id+1;
+//        console.log(this.state.currentProduct.id)
+//        this.setState(()=>{
+//            return{
+//            currentProduct:this.state.products[newIndex]
+//            }
+//        })
+//    }
+//    prevProduct = () => {
+//         let newIndex = this.state.currentProduct.id-2;
+//         console.log(this.state.currentProduct.id)
+//         this.setState(()=>{
+//             return{
+//             currentProduct:this.state.products[newIndex]
+//             }
+//         })
+//     }
     // componentDidMount(){
     //     let slider = document.getElementById('product-slider');
     //     if()
@@ -149,6 +153,7 @@ export default class HomePage extends Component {
                     <div id="product-slider" className="d-flex card-wrapper" >
                             {products.map(product =>{
                                 return(
+                                    <Link to="/ProductList">
                                     <div className="product-slider-wrapper">
                                     <div className="card mb-2">
                                     <div className="card-title pt-2 text-center"><h4 className="brand-title ">{product.title}</h4></div>
@@ -158,67 +163,12 @@ export default class HomePage extends Component {
                                     <div className="card-footer"></div>
                                 </div>
                                 </div>
+                                </Link>
                                 )
                             })
                         }
                     </div>
                   </div>
-                    {/* <div className="card mb-2">
-                        <div className="card-title pt-2 text-center"><h4 className="brand-title ">Apple</h4></div>
-                        <div className="card-body text-center">
-                            <img src={apple} alt="apple-product" />
-                        </div>
-                        <div className="card-footer"></div>
-                    </div>
-                    <div className="card mb-2">
-                        <div className="card-title pt-2 text-center"><h4 className="brand-title ">OnePlus</h4></div>
-                        <div className="card-body text-center">
-                            <img src={oneplus} alt="oneplus-product" />
-                        </div>
-                        <div className="card-footer"></div>
-                    </div>
-                    <div className="card mb-2">
-                        <div className="card-title pt-2 text-center"><h4 className="brand-title ">Samsung</h4></div>
-                        <div className="card-body text-center">
-                            <img src={samsung} alt="oneplus-product" />
-                        </div>
-                        <div className="card-footer"></div>
-                    </div>
-                    <div className="card mb-2">
-                        <div className="card-title pt-2 text-center"><h4 className="brand-title ">Apple</h4></div>
-                        <div className="card-body text-center">
-                            <img src={apple} alt="apple-product" />
-                        </div>
-                        <div className="card-footer"></div>
-                    </div>
-                    <div className="card mb-2">
-                        <div className="card-title pt-2 text-center"><h4 className="brand-title ">OnePlus</h4></div>
-                        <div className="card-body text-center">
-                            <img src={oneplus} alt="oneplus-product" />
-                        </div>
-                        <div className="card-footer"></div>
-                    </div>
-                    <div className="card mb-2">
-                        <div className="card-title pt-2 text-center"><h4 className="brand-title ">Samsung</h4></div>
-                        <div className="card-body text-center">
-                            <img src={samsung} alt="oneplus-product" />
-                        </div>
-                        <div className="card-footer"></div>
-                    </div>
-                    <div className="card mb-2">
-                        <div className="card-title pt-2 text-center"><h4 className="brand-title ">Google</h4></div>
-                        <div className="card-body text-center">
-                            <img src={google} alt="oneplus-product" />
-                        </div>
-                        <div className="card-footer"></div>
-                    </div>
-                    <div className="card mb-2">
-                        <div className="card-title pt-2 text-center"><h4 className="brand-title ">Google</h4></div>
-                        <div className="card-body text-center">
-                            <img src={google} alt="oneplus-product" />
-                        </div>
-                        <div className="card-footer"></div>
-                    </div> */}
             </div>
         )
     }
