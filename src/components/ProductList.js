@@ -22,9 +22,10 @@ export default class ProductList extends Component {
         this.sortProduct();
     }
     sortProduct = () =>{
+        let products = this.state.filteredProduct;
         this.setState(state =>{
             if(state.sort !== 'Select'){
-                this.state.products.sort((a,b)=>
+                products = products.sort((a,b)=>
                     (state.sort=='Low to High')?
                         (a.price>b.price? 1:-1):(
                     (state.sort=='High to Low')?
@@ -34,19 +35,22 @@ export default class ProductList extends Component {
                 // console.log(state.products);
             }
             if(state.sort == 'Select'){
-                this.state.products.sort((a,b)=> a.id < b.id ? 1:-1)
+                products = products.sort((a,b)=> a.id < b.id ? 1:-1)
             }
         
-            return {filteredProduct:this.state.products}
+            return {filteredProduct:products}
         })
     }
     filterProducts = () => {
+        // let selectSort = document.getElementById('sort');
+        // console.log(selectSort.selectedIndex)
+        // selectSort.selectedIndex = 0;
         this.setState(state => {
             if(state.filter !== 'Brand'){
                    let products = state.products.filter(a => a.company == state.filter)
-                    return{filteredProduct:products}  
+                    return{filteredProduct:products,sort: 'Select'}  
                 }
-            console.log(this.state.filteredProduct)
+                
         })        
     }
     render() {
@@ -62,10 +66,10 @@ export default class ProductList extends Component {
                         <div className="col-xs-12 col-md-12 col-lg-12 filter-section-wrapper">
                             <div className="d-flex padBottom floatRight" id="filter-section">
                                 <div className="col-xs-6 mr-2">
-                                    <Select label={"Filter by"} options={filterOption} sort={this.state.filter} handleClick={this.handleFilter} />
+                                    <Select id="filter" label={"Filter by"} options={filterOption} sort={this.state.filter} handleClick={this.handleFilter} />
                                 </div>
                                 <div className="col-xs-6 ">
-                                    <Select label={"Sort by"} options={sortOption} sort={this.state.sort} handleClick={this.handleSort}/>
+                                    <Select id="sort" label={"Sort by"} options={sortOption} sort={this.state.sort} handleClick={this.handleSort}/>
                                 </div>        
                             </div>
                         </div>
