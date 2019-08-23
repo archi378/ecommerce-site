@@ -489,14 +489,16 @@ ul.thumb li {
   width: 60px;
   height: 60px;
   border: 1px solid #d3d3d3;
-  -webkit-appearance: none;
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none;
   display: block;
   cursor: pointer;
 }
-
 .thumb img {
   padding-top: 5px;
 }
+
 
 /* #thumb1 {
   background-image: url('img/google/thumb1.jpg');
@@ -514,7 +516,11 @@ ul.thumb li {
   left: 50%;
   transform: translate(-50%, -50%); */
 }
-
+/* #product-detail .thumb~span {
+  position: absolute;
+  z-index: 4;
+  background-color: #ffffff;
+} */
 .slider-wrapper {
   /* position: relative; */
   display: flex;

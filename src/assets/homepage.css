@@ -138,13 +138,17 @@
     width: 100%;
     overflow: scroll;
     -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
     /* display: flex; */
     /* -webkit-overflow-scrolling: touch;  */
 }
 #section-4::-webkit-scrollbar {
     display: none; 
     -ms-overflow-style: none;
+    scrollbar-width: 0px;
 }
+
 
 .button-wrapper {
     position: absolute;
