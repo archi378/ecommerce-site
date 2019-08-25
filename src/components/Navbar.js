@@ -60,7 +60,13 @@ export default class Navbar extends Component {
                     </Link><span className="logotext d-none d-md-block">iniSHOP</span>
                 </div>
                 <div className="col-xs-12 col-md-4 col-lg-3 pt-2 displayNone">
-                    <SearchBar />
+                    <ProductConsumer>
+                        {data => {
+                            return(
+                                <SearchBar handleChange={(e)=>{data.handleChange(e)}} handleSubmit={(e)=>{data.handleSubmit(e)}}/>
+                            )
+                        }}
+                    </ProductConsumer>
                 </div>
             </div>
             <div className="row mobile-view">

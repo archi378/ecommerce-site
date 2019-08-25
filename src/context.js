@@ -13,7 +13,8 @@ class ProductProvider extends Component {
         modalProduct:detailProduct,
         subTotal:0,
         tax:0,
-        cartTotal:0
+        cartTotal:0,
+        search:''
     }
     componentDidMount(){
         this.setProducts();
@@ -155,6 +156,23 @@ class ProductProvider extends Component {
             } 
         })
     }
+    handleChange = (e) => {
+        this.setState({
+            search: e.target.value
+        })
+        console.log(this.state.search)
+    }
+    handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(this.state.search)
+        let tempProducts = [...this.state.products];
+        tempProducts = tempProducts.filter(item=> item.company.toLowerCase().indexOf(this.state.search.toLowerCase()));
+        console.log(tempProducts)
+        this.setState(()=>{
+            return{products:[...tempProducts]};
+        })
+       
+    }
     render() {
         return (
             <ProductContext.Provider value={{
@@ -169,7 +187,9 @@ class ProductProvider extends Component {
               decrement:this.decrement,
               remove:this.remove,
               removeWishlistItem:this.removeWishlistItem,
-              clear:this.clear
+              clear:this.clear,
+              handleChange:this.handleChange,
+              handleSubmit:this.handleSubmit
             }}>
                 {this.props.children}
             </ProductContext.Provider>
