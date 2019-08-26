@@ -14,7 +14,8 @@ class ProductProvider extends Component {
         subTotal:0,
         tax:0,
         cartTotal:0,
-        search:''
+        search:'',
+        searchedProduct:[]
     }
     componentDidMount(){
         this.setProducts();
@@ -164,14 +165,27 @@ class ProductProvider extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state.search)
+    }
+    handleSearch = () => {
         let tempProducts = [...this.state.products];
-        tempProducts = tempProducts.filter(item=> item.company.toLowerCase().indexOf(this.state.search.toLowerCase()));
-        console.log(tempProducts)
-        this.setState(()=>{
-            return{products:[...tempProducts]};
+        tempProducts = tempProducts.filter(item => {
+            let company = item.company.toLowerCase()
+            let title = item.title.toLowerCase()
+            let search = this.state.search.toLowerCase()
+            let searchArray = search.split(' ')
+            if(search !== '' && (searchArray.includes(company) !== false || 
+                (searchArray.includes(company) === false && searchArray.includes('mobiles') === true) || 
+                (searchArray.filter(word => title.split(' ').includes(word)!== false ).length !== 0) )) {
+            // console.log(search.split(' ').includes(company))
+            // if(company === search) 
+            return(item)
+            }
         })
-       
+        this.setState(()=> {
+            return{
+            searchedProduct:[...tempProducts],
+            }
+        }) 
     }
     render() {
         return (
@@ -189,7 +203,8 @@ class ProductProvider extends Component {
               removeWishlistItem:this.removeWishlistItem,
               clear:this.clear,
               handleChange:this.handleChange,
-              handleSubmit:this.handleSubmit
+              handleSubmit:this.handleSubmit,
+              handleSearch:this.handleSearch
             }}>
                 {this.props.children}
             </ProductContext.Provider>

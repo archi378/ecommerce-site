@@ -157,12 +157,12 @@ option:not(:checked) {
     position: relative;
     width: 105px !important;
     border-bottom: 1px solid #dee2e6 !important;
-    right: -100%;
+    right: 0;
     transition: 1s;
     color: #ffffff;
   }
   .activeRight {
-    right: 0;
+    right: 0 !important;
   }
   .navbar-toggler {
     padding: 0 !important;
@@ -193,6 +193,9 @@ option:not(:checked) {
     padding-left: 8px;
     padding-right: 8px;
     background-color: #dee2e6;
+  }
+  .brand-title {
+    font-size: 20px !important;
   }
 }
 
@@ -731,3 +734,12 @@ ul.thumb li {
 /* .footer-container .social-links li img {
  cursor: pointer;
 } */
+
+/*Searched Results*/
+.searchProduct {
+  border: 1px solid #CCC;
+}
+.brand-title {
+  font-size: 15px;
+  color: #000000;
+}

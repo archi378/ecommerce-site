@@ -11,6 +11,7 @@ import Wishlist from './components/Wishlist';
 import PageNotFound from './components/PageNotFound';
 import Modal from './components/Modal';
 import Footer from './components/Footer';
+import SearchedProduct from './components/SearchedProduct';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/ProductDetails" component={ProductDetails} />
         <Route exact path="/Cart" component={Cart} />
         <Route exact path="/Wishlist" component={Wishlist} />
+        <Route exact path="/Search-results" component={SearchedProduct} />
         <Route component={PageNotFound} />
       </Switch>
       <Modal />

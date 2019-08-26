@@ -14,13 +14,6 @@ export default class Navbar extends Component {
         // slideNav.style.display = (slideNav.style.width != '0' ? '0' : ' ' );
         slideNav.classList.toggle('active');
     }
-    handleSearch =()=> {
-        let element = document.getElementById('searchbox');
-        // element.style.display = (element.style.display != 'block' ? 'block' : 'none' );
-        // slideNav.style.display = (slideNav.style.width != '0' ? '0' : ' ' );
-        element.classList.toggle('activeRight');
-        console.log('search')
-    }
     render() {
         return (
             <nav className="navbar navbar-expand-md navbar-dark bg-dark">
@@ -63,7 +56,7 @@ export default class Navbar extends Component {
                     <ProductConsumer>
                         {data => {
                             return(
-                                <SearchBar handleChange={(e)=>{data.handleChange(e)}} handleSubmit={(e)=>{data.handleSubmit(e)}}/>
+                                <SearchBar handleChange={(e)=>{data.handleChange(e)}} handleSubmit={(e)=>{data.handleSubmit(e)}} handleSearch={()=>{data.handleSearch()}}/>
                             )
                         }}
                     </ProductConsumer>
@@ -91,9 +84,7 @@ export default class Navbar extends Component {
                         return (
                             <ul id="account-info" className="navbar-nav floatRight d-flex align-items-center">
                                 <li className="d-flex search-outer d-md-none">
-                                    <span id="searchbox-wrapper" >
-                                        <input type="text" id="searchbox" placeholder="search" className="search-input" /></span>
-                                    <i className="material-icons search-icon pt-2 nav-text" onClick={this.handleSearch}>search</i>
+                                    <SearchBar handleChange={(e)=>{data.handleChange(e)}} handleSubmit={(e)=>{data.handleSubmit(e)}} handleSearch={()=>{data.handleSearch()}}/>
                                 </li>
                                 <li className=" nav-item nav-text text-center text-font mx-2">
                                 <Link to="/Wishlist" className="nav-text" >

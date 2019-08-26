@@ -47,10 +47,7 @@
 .shop-btn:hover {
     background: #ff660a;
 }
-.brand-title {
-    font-size: 20px;
-    color: #000000;
-}
+
 @keyframes slider {
     0%  {left: 0%;}
     20% {left: 0%;}

@@ -95,11 +95,11 @@ export default class ProductDetails extends Component {
                             <h2 className="h2-Font NeueSerifBold">{title}</h2>
                             <h4 className="h4-Font price-text-color"> Price: ₹{price}</h4>
                             <div className="stars-outer">
-                            <i class="far fa-star review-text"></i>
-                            <i class="far fa-star review-text"></i>
-                            <i class="far fa-star review-text"></i>
-                            <i class="far fa-star review-text"></i>
-                            <i class="far fa-star review-text"></i>
+                            <i className="far fa-star review-text"></i>
+                            <i className="far fa-star review-text"></i>
+                            <i className="far fa-star review-text"></i>
+                            <i className="far fa-star review-text"></i>
+                            <i className="far fa-star review-text"></i>
                                 <div className="stars-inner">
                                 </div>
                             </div>
