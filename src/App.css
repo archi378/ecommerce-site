@@ -151,7 +151,7 @@ option:not(:checked) {
   #searchbox-wrapper {
     overflow: hidden;
     position: relative;
-    padding-top: 10px;
+    /* padding-top: 10px; */
   }
   .search-input {
     position: relative;
@@ -188,11 +188,15 @@ option:not(:checked) {
     border-bottom: 0 !important;
     padding-bottom: 20px !important;
   }
+  .search-icon-wrapper {
+    background: #007bff;
+    height: 30px;
+  }
   .search-icon {
     padding-top: 5px;
     padding-left: 8px;
     padding-right: 8px;
-    background-color: #dee2e6;
+    color:#ffffff;
   }
   .brand-title {
     font-size: 20px !important;
