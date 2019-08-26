@@ -173,8 +173,7 @@ class ProductProvider extends Component {
             let title = item.title.toLowerCase()
             let search = this.state.search.toLowerCase()
             let searchArray = search.split(' ')
-            if(search !== '' && (searchArray.includes(company) !== false || 
-                (searchArray.includes(company) === false && searchArray.includes('mobiles') === true) || 
+            if(search !== '' && (searchArray.includes(company) !== false ||  
                 (searchArray.filter(word => title.split(' ').includes(word)!== false ).length !== 0) )) {
             // console.log(search.split(' ').includes(company))
             // if(company === search) 
