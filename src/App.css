@@ -189,7 +189,7 @@ option:not(:checked) {
     padding-bottom: 20px !important;
   }
   .search-icon-wrapper {
-    background: #007bff;
+    background:#0f74b4;
     height: 30px;
   }
   .search-icon {

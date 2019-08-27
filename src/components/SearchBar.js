@@ -15,7 +15,7 @@ export default class SearchBar extends Component {
             <div className=" d-flex justify-content-center">
                 <form className="search-wrapper d-none d-md-block" onSubmit={this.props.handleSubmit}>
                     <span className="d-flex">
-                        <input type="text" id="search" className="search-input" onChange={this.props.handleChange} />
+                        <input type="text" id="search" placeholder="Search..." className="search-input" onChange={this.props.handleChange} />
                         <Link to='/Search-results' className="d-inline-block search-icon-wrapper"><i className="material-icons search-icon" onClick={this.props.handleSearch}>search</i></Link>
                     </span> 
                 </form>
