@@ -15,7 +15,8 @@ class ProductProvider extends Component {
         tax:0,
         cartTotal:0,
         search:'',
-        searchedProduct:[]
+        searchedProduct:[],
+        selectedColor:'black'
     }
     componentDidMount(){
         this.setProducts();
@@ -37,8 +38,9 @@ class ProductProvider extends Component {
     handleDetail = (id) =>{
         const product = this.getItem(id);
         this.setState(()=>{
-            return{detailProduct:product}
-        })
+            return{detailProduct:product,selectedColor:product.thumb[0].color}
+        },()=>{console.log('hello from state',this.state.selectedColor)})
+
     }
     addToCart = (id) =>{
         console.log(`hello from Cart.id is ${id}`)
@@ -163,6 +165,12 @@ class ProductProvider extends Component {
         })
         console.log(this.state.search)
     }
+    handleColor = (e,id) => {  
+        this.setState({
+            selectedColor: e.target.value
+        })
+        console.log(this.state.selectedColor)
+    }
     handleSubmit = (e) => {
         e.preventDefault();
     }
@@ -203,7 +211,8 @@ class ProductProvider extends Component {
               clear:this.clear,
               handleChange:this.handleChange,
               handleSubmit:this.handleSubmit,
-              handleSearch:this.handleSearch
+              handleSearch:this.handleSearch,
+              handleColor:this.handleColor
             }}>
                 {this.props.children}
             </ProductContext.Provider>
