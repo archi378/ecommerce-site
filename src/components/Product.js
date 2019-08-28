@@ -59,8 +59,7 @@ export default class Product extends Component {
                                     this.handleWishlist(product.id)
                                     console.log(inWishlist)
                                 }}>
-                            <i id={`"wishlist-${id}"`} className="fas fa-heart wishlist-btn ">
-                                </i>
+                            <i id={`"wishlist-${id}"`} className="fas fa-heart wishlist-btn "></i>
                             <span id={`"wishlist-effect-${id}"`} className="btn-position d-none"><WishlistBtn /></span>
                         </div>
                         <div className="card-body">

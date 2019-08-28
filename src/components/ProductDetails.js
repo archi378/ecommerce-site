@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {ProductConsumer } from '../context'
+import WishlistBtn from './WishlistBtn';
 
 
 export default class ProductDetails extends Component {
@@ -14,6 +15,13 @@ export default class ProductDetails extends Component {
     }
     onMouseOverEvent = (e) => {
         document.getElementById('imgBox').src = e.target.value;
+    }
+    handleWishlist = (id) =>{
+        let wishlist = document.getElementById(`"wishlist-${id}"`);
+        let wishlistEffect = document.getElementById(`"wishlist-effect-${id}"`);
+        wishlist.classList.toggle('wishlist-btn-clicked');
+        wishlistEffect.classList.toggle('d-none');
+        console.log(id)
     }
     slideLeft = (e) => {
         let slider = document.querySelector('.slider-wrapper');
@@ -33,14 +41,23 @@ export default class ProductDetails extends Component {
         return (
             <ProductConsumer>
                 {data =>{
-                    let { id, title, img, price, inCart, color, colorType, memory, camera, images, thumb,
+                    let { id, title, img, price, inCart, inWishlist, color, colorType, memory, camera, images, thumb,
                         thumb_target, specification, battery, processor, reviews} = data.detailProduct;
 
                     return (
                     <div>
                     <div id="product-detail" className="row wishlist-wrapper">
                         <div className="col-xs-12 col-md-6 d-flex text-center">
-                        <i  id='wishlist'  className="fas fa-heart pdp-wishlist-btn " onClick={this.handleWishlist}></i>
+                        <div className="wishlist-btn top0" onClick={()=> {
+                                    data.addToWishlist(id);
+                                    const product = data.getItem(id);
+                                    inWishlist = product.inWishlist;
+                                    this.handleWishlist(product.id)
+                                    console.log(inWishlist)
+                                }}>
+                            <i id={`"wishlist-${id}"`} className="fas fa-heart wishlist-btn top0"></i>
+                            <span id={`"wishlist-effect-${id}"`} className="btn-position d-none"><WishlistBtn /></span>
+                        </div>
                             {/* <ul className="thumb">
                                 <li><a href="img/google/img-target1.jpg" target="imgBox" onClick={this.onHover}>
                                     <img src="img/google/thumb1.jpg" /></a></li>
