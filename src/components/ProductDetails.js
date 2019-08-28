@@ -11,17 +11,22 @@ export default class ProductDetails extends Component {
         window.scroll(0,0)
     }
     componentDidMount(){ 
-        document.getElementById('imgBox').src = document.getElementById('thumb1').value;
+        // document.getElementById('imgBox').src = document.getElementById('thumbImage0').value;
     }
     onMouseOverEvent = (e) => {
         document.getElementById('imgBox').src = e.target.value;
+    }
+    selectedColor = () => {
+        let select = document.querySelector('input[name=color]').value;
+        return(select)
     }
     handleWishlist = (id) =>{
         let wishlist = document.getElementById(`"wishlist-${id}"`);
         let wishlistEffect = document.getElementById(`"wishlist-effect-${id}"`);
         wishlist.classList.toggle('wishlist-btn-clicked');
         wishlistEffect.classList.toggle('d-none');
-        console.log(id)
+        let select = document.querySelector('input[name=color]').value;
+        console.log(select)
     }
     slideLeft = (e) => {
         let slider = document.querySelector('.slider-wrapper');
@@ -41,7 +46,7 @@ export default class ProductDetails extends Component {
         return (
             <ProductConsumer>
                 {data =>{
-                    let { id, title, img, price, inCart, inWishlist, color, colorType, memory, camera, images, thumb,
+                    let { id, title, img, price, inCart, inWishlist, memory, camera, images, thumb,
                         thumb_target, specification, battery, processor, reviews} = data.detailProduct;
 
                     return (
@@ -55,7 +60,7 @@ export default class ProductDetails extends Component {
                                     this.handleWishlist(product.id)
                                     console.log(inWishlist)
                                 }}>
-                            <i id={`"wishlist-${id}"`} className="fas fa-heart wishlist-btn top0"></i>
+                            <i id={`"wishlist-${id}"`} className="material-icons wishlist-btn top0">bookmark</i>
                             <span id={`"wishlist-effect-${id}"`} className="btn-position d-none"><WishlistBtn /></span>
                         </div>
                             {/* <ul className="thumb">
@@ -78,15 +83,32 @@ export default class ProductDetails extends Component {
                                     </div>
                                 )
                             })} */}
-                            
-                                <input className="thumb position-absolute" type="radio" id="thumb1"  name="thumb" checked onMouseOver={this.onMouseOverEvent} onChange={this.onMouseOverEvent} value={thumb_target[0]}/>
+
+                            { thumb.map(thumb=> {
+                                if(thumb.color === 'black')
+                                console.log(thumb.color)
+                                console.log(this.selectedColor)
+                                return(
+                                    thumb.image.map((image,index) => {
+                                        return(
+                                            <div>
+                                            <input className="thumb position-absolute" type="radio" id={`"thumbImage${index}"`}  name="thumb" checked onMouseOver={this.onMouseOverEvent} onChange={this.onMouseOverEvent} value={thumb.thumb_target[index]}/>
+                                            <span className="thumb mb-2"><img src={image}  alt='product-thumb'/></span>
+                                            </div>
+                                        )
+                                       
+                                    })
+                                    )
+                                  })}
+                               
+                                {/* <input className="thumb position-absolute" type="radio" id="thumb1"  name="thumb" checked onMouseOver={this.onMouseOverEvent} onChange={this.onMouseOverEvent} value={thumb_target[0]}/>
                                 <span className="thumb mb-2"><img src={thumb[0]} /></span>
                                 <input className="thumb position-absolute" type="radio" id="thumb2"  name="thumb" onMouseOver={this.onMouseOverEvent} onChange={this.onMouseOverEvent} value={thumb_target[1]}/>
                                 <span className="thumb mb-2"><img src={thumb[1]} /></span>
                                 <input className="thumb position-absolute" type="radio" id="thumb3"  name="thumb" onMouseOver={this.onMouseOverEvent} onChange={this.onMouseOverEvent} value={thumb_target[2]} />
                                 <span className="thumb mb-2"><img src={thumb[2]} /></span>
                                 <input className="thumb position-absolute" type="radio" id="thumb4"  name="thumb" onMouseOver={this.onMouseOverEvent} onChange={this.onMouseOverEvent} value={thumb_target[3]} />
-                                <span className="thumb mb-2"><img src={thumb[3]} /></span>
+                                <span className="thumb mb-2"><img src={thumb[3]} /></span> */}
                             </div>
                             <div className="col-md-9 imgBox text-center d-none d-md-block">
                                 <img id="imgBox" src="" alt={`"${title} image "`} className="height300"/>
@@ -96,16 +118,16 @@ export default class ProductDetails extends Component {
 
                             <div className="slider-container-pdp text-center d-md-none d-sm-block">
                                 <div className="slider-wrapper">
-                                    <section className="slides"><img src={thumb_target[0]} className="height300 width200" /></section>
+                                    {/* <section className="slides"><img src={thumb_target[0]} className="height300 width200" /></section>
                                     <section className="slides"><img src={thumb_target[1]} className="height300 width200" /></section>
                                     <section className="slides"><img src={thumb_target[2]} className="height300 width200" /></section>
-                                    <section className="slides"><img src={thumb_target[3]} className="height300 width200" /></section>
+                                    <section className="slides"><img src={thumb_target[3]} className="height300 width200" /></section> */}
                                 </div>
                                 <div className="slider-control">
                                     <span className="arrow-left" onClick={this.slideLeft}></span>
                                     <span className="arrow-right" onClick={this.slideRight}></span>
                                 </div>
-                                <div className="slider-number">{this.state.sliderIndex+1}/{thumb_target.length}</div>
+                                {/* <div className="slider-number">{this.state.sliderIndex+1}/{thumb_target.length}</div> */}
                             </div>
                         </div>
                         <div className="col-xs-12 col-md-6 px-4">
@@ -125,24 +147,16 @@ export default class ProductDetails extends Component {
                             <div className="mt-3">
                             <label className="RobotoRegular">Select Color :</label>
                                 <div className=" col-xs-6 d-flex">
-                                    {colorType && color.map((colorType,index) =>{
+                                    {thumb && thumb.map((thumb,index) =>{
                                         return(
-                                        <div className=" color-div-wrapper">
-                                            <input type="radio" className="color-radio-btn" />
+                                        <div id='selected-color' className=" color-div-wrapper">
+                                            <input type="radio" className="color-radio-btn" name='color' id={`'color-'${thumb.colorType}`} value={thumb.color} onClick={()=>{console.log(thumb.colorType)}}/>
                                             <div id="color-div-outer" className="">
-                                            <div className="color-div" style={{ backgroundColor : colorType}}></div>
+                                            <div className="color-div" style={{ backgroundColor : thumb.colorType}}></div>
                                             </div>
+                                            <label className="text-font">{thumb.color}</label>
                                         </div>
                                     )
-                                    })}
-                                </div>
-                                <div className="d-flex">
-                                {color && color.map((color,index)=>{
-                                        return(
-                                            <div className="color-label-div">
-                                                <label className="text-font">{color}</label>
-                                            </div>
-                                        )
                                     })}
                                 </div><hr></hr>
                                 <div className="select-size-section ">
