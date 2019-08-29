@@ -6,14 +6,16 @@ import WishlistBtn from './WishlistBtn';
 export default class ProductDetails extends Component {
     state = {
         sliderIndex:0,
-        selectedColor:'grey'
     }
     componentWillMount() {
         window.scroll(0,0)
     }
     componentDidMount(){ 
+        let defaultColor = document.querySelector('input[name=color]');
+        defaultColor.checked = true;
+        let defaultSize = document.querySelector('input[name=size]');
+        defaultSize.checked = true;
         let element = document.getElementById('thumbImage0');
-        console.log(element)
         if(element !== null){
         document.getElementById('imgBox').src = element.value;
         }
@@ -25,21 +27,12 @@ export default class ProductDetails extends Component {
     onMouseOverEvent = (e) => {
         document.getElementById('imgBox').src = e.target.value;
     }
-    selectedColor = () => {
-        // let select = document.querySelector('input[name=color]').value;
-        this.setState(()=>{
-            return{ selectedColor:document.querySelector('input[name=color]').value}
-           
-        })
-        return('select')
-    }
+    
     handleWishlist = (id) =>{
         let wishlist = document.getElementById(`"wishlist-${id}"`);
         let wishlistEffect = document.getElementById(`"wishlist-effect-${id}"`);
         wishlist.classList.toggle('wishlist-btn-clicked');
         wishlistEffect.classList.toggle('d-none');
-        let select = document.querySelector('input[name=color]').value;
-        console.log(select)
     }
     slideLeft = (e) => {
         let slider = document.querySelector('.slider-wrapper');
@@ -99,14 +92,11 @@ export default class ProductDetails extends Component {
 
                             { thumb.map(thumb=> {
                                 if(data.selectedColor !== '' && thumb.color === data.selectedColor){
-                                console.log(thumb.color)
-                                console.log(data.selectedColor)
                                 return(
                                     thumb.image.map((image,index) => {
                                         return(
                                             <div>
                                             <input className="thumb position-absolute" type="radio" id={`thumbImage${index}`}  name="thumb" onMouseOver={this.onMouseOverEvent} onChange={this.onMouseOverEvent} value={thumb.thumb_target[index]}/>
-                                            {console.log("thumbImage",index)}
                                             <span className="thumb mb-2"><img src={image}  alt='product-thumb'/></span>
                                             </div>
                                             
@@ -133,10 +123,7 @@ export default class ProductDetails extends Component {
                             <div className="slider-container-pdp text-center d-md-none d-sm-block">
                             <div className="slider-wrapper">
                                 { thumb.map(thumb=> {
-                                if(data.selectedColor !== '' && thumb.color === data.selectedColor){
-                                console.log(thumb.color)
-                                console.log(data.selectedColor)
-                                
+                                if(data.selectedColor !== '' && thumb.color === data.selectedColor){               
                                 return(
                                     thumb.thumb_target.map((image,index) => {
                                         return(
@@ -158,8 +145,8 @@ export default class ProductDetails extends Component {
                                 <div className="slider-number">{this.state.sliderIndex+1}/{thumb[0].thumb_target.length}</div>
                             </div>
                         </div>
-                        <div className="col-xs-12 col-md-6 px-4">
-                            <h2 className="h2-Font NeueSerifBold">{title}</h2>
+                        <div className="col-xs-12 col-md-6 px-4 pt-4 pt-md-0">
+                            <div className="d-flex align-items-center"><h2 className="h2-Font NeueSerifBold d-inline pr-3 margin0">{title}</h2><span className="text-font">({data.selectedColor}-{data.selectedSize})</span></div>
                             <h4 className="h4-Font price-text-color"> Price: ₹{price}</h4>
                             <div className="stars-outer">
                             <i className="far fa-star review-text"></i>
@@ -177,8 +164,8 @@ export default class ProductDetails extends Component {
                                 <div className=" col-xs-6 d-flex">
                                     {thumb && thumb.map((thumb,index) =>{
                                         return(
-                                        <div id='selected-color' className=" color-div-wrapper">
-                                            <input type="radio" className="color-radio-btn" name='color' id={`'color-'${thumb.colorType}`} value={thumb.color} onClick={(e)=>{data.handleColor(e)}}/>
+                                        <div className=" color-div-wrapper">
+                                            <input type="radio" className="color-radio-btn" name='color' id={`color-${index}`} value={thumb.color} onClick={(e)=>{data.handleColor(e,id)}}/>
                                             <div id="color-div-outer" className="">
                                             <div className="color-div" style={{ backgroundColor : thumb.colorType}}></div>
                                             </div>
@@ -192,14 +179,17 @@ export default class ProductDetails extends Component {
                                     <div className="size-div-wrapper d-flex">
                                         {memory && memory.map((memory,index)=>{
                                             return(
-                                                <div className="size-div mr-3">
-                                                    {memory}
+                                                <div className=" color-div-wrapper mr-3">
+                                                <input type="radio" className="size-radio-btn" name='size' id={`size-${index}`} value={memory} onClick={(e)=>{data.handleSize(e,id)}}/>
+                                                <div id="color-div-outer" className="size-div mr-3">
+                                                 {memory}
                                                 </div>
+                                            </div>
                                             )
                                         })}
                                     </div>
-                                </div><hr></hr>
-                            </div>
+                                </div>
+                            </div><hr></hr>
                             <button className="btn btn-primary RobotoRegular custom-btn"
                              disabled={inCart? true : false}
                              onClick={()=>{

@@ -16,7 +16,7 @@ export default class Product extends Component {
         console.log(id)
     }
     render() {
-        let { id, title, img, price, inCart, inWishlist, color, reviews}= this.props.product;
+        let { id, title, img, price, inCart, inWishlist, color, reviews, thumb, memory}= this.props.product;
         return (
             <div id="productList" className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                 <ProductConsumer>
@@ -78,6 +78,38 @@ export default class Product extends Component {
                                 </div>
                             </div>
                             <span className="pl-3 review-text">({reviews} Reviews )</span>
+                            {/* <div id="selection-div" className={`${data.onHover? "" : "onHover" } pl-3 pb-5 pt-2 d-none `}>
+                                <div>
+                                <label className="RobotoRegular text-font">Select Color :</label>
+                                <div className=" col-xs-6 d-flex pb-2">
+                                    {thumb && thumb.map((thumb,index) =>{
+                                        return(
+                                        <div className=" color-div-wrapper gw-color-div-wrapper">
+                                            <input type="radio" className="color-radio-btn gw-color-radio-btn" name='color' id={`color-${index}`} value={thumb.color} onClick={(e)=>{data.handleColor(e,id)}}/>
+                                            <div id="color-div-outer" className="">
+                                            <div className="color-div gw-color-div" style={{ backgroundColor : thumb.colorType}}></div>
+                                            </div>
+                                        </div>
+                                    )
+                                    })}
+                                </div>
+                                </div>
+                                <div className="">
+                                    <label className="RobotoRegular text-font">Select Size :</label>
+                                    <div className="size-div-wrapper d-flex">
+                                        {memory && memory.map((memory,index)=>{
+                                            return(
+                                                <div className=" color-div-wrapper gw-color-div-wrapper mr-3">
+                                                <input type="radio" className="size-radio-btn gw-size-radio-btn" name='size' id={`size-${index}`} value={memory} onClick={(e)=>{data.handleSize(e,id)}}/>
+                                                <div id="color-div-outer" className="size-div  gw-size-div mr-3">
+                                                 {memory}
+                                                </div>
+                                            </div>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
+                            </div> */}
                             </div>
                         </div>
                     </div>

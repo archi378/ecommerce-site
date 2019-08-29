@@ -16,7 +16,9 @@ class ProductProvider extends Component {
         cartTotal:0,
         search:'',
         searchedProduct:[],
-        selectedColor:'black'
+        selectedColor:'Black',
+        selectedSize: '',
+        onHover: false
     }
     componentDidMount(){
         this.setProducts();
@@ -38,8 +40,8 @@ class ProductProvider extends Component {
     handleDetail = (id) =>{
         const product = this.getItem(id);
         this.setState(()=>{
-            return{detailProduct:product,selectedColor:product.thumb[0].color}
-        },()=>{console.log('hello from state',this.state.selectedColor)})
+            return{detailProduct:product,selectedColor:product.thumb[0].color,selectedSize:product.memory[0]}
+        },()=>{console.log('hello from state',this.state.selectedColor , this.state.selectedSize)})
 
     }
     addToCart = (id) =>{
@@ -52,7 +54,12 @@ class ProductProvider extends Component {
         const price = product.price 
         product.total = price;
         this.setState(()=>{
-            return{products:tempProducts,cart:[...this.state.cart,product]}
+            return{
+                products:tempProducts,
+                cart:[...this.state.cart,product],
+                selectedColor:(this.state.selectedColor === ''|| this.state.selectedColor === 'Black'? product.thumb[0].color : this.state.selectedColor),
+                selectedSize:(this.state.selectedSize === ''? product.memory[0] : this.state.selectedSize)
+            }
         },()=> {this.addTotals()})
     }
     addToWishlist = (id) => {
@@ -63,7 +70,12 @@ class ProductProvider extends Component {
         if(!product.inWishlist){
             product.inWishlist = true
             this.setState(()=>{
-                return{products:tempProducts,wishlist:[...this.state.wishlist,product]}
+                return{
+                    products:tempProducts,
+                    wishlist:[...this.state.wishlist,product],
+                    selectedColor:(this.state.selectedColor === ''|| this.state.selectedColor === 'Black'? product.thumb[0].color : this.state.selectedColor),
+                    selectedSize:(this.state.selectedSize === ''? product.memory[0] : this.state.selectedSize)
+                }
             },()=> console.log(this.state))
         }
         else{
@@ -171,6 +183,13 @@ class ProductProvider extends Component {
         })
         console.log(this.state.selectedColor)
     }
+
+    handleSize = (e,id) => {  
+        this.setState({
+            selectedSize:e.target.value
+        })
+        console.log(this.state.selectedSize)
+    }
     handleSubmit = (e) => {
         e.preventDefault();
     }
@@ -212,7 +231,8 @@ class ProductProvider extends Component {
               handleChange:this.handleChange,
               handleSubmit:this.handleSubmit,
               handleSearch:this.handleSearch,
-              handleColor:this.handleColor
+              handleColor:this.handleColor,
+              handleSize:this.handleSize
             }}>
                 {this.props.children}
             </ProductContext.Provider>
