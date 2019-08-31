@@ -10,12 +10,20 @@ export default class SearchBar extends Component {
         element.classList.toggle('activeRight');
         console.log(element)
     }
+
+    keyDown = (e) => {
+        if(e.keyCode === 13){
+            this.props.handleSearch();
+            // window.location.href =  window.location.href+'Search-results'
+        }
+    }
+    
     render() {
         return (
             <div className=" d-flex justify-content-center">
                 <form className="search-wrapper d-none d-md-block" onSubmit={this.props.handleSubmit}>
                     <span className="d-flex">
-                        <input type="text" id="search" placeholder="Search..." className="search-input" onChange={this.props.handleChange} />
+                        <input type="text" id="search" placeholder="Search..." className="search-input" onChange={this.props.handleChange} onKeyDown={this.keyDown}/>
                         <Link to='/Search-results' className="d-inline-block search-icon-wrapper"><i className="material-icons search-icon" onClick={this.props.handleSearch}>search</i></Link>
                     </span> 
                 </form>

@@ -175,7 +175,7 @@ export default class ProductDetails extends Component {
                                     })}
                                 </div><hr></hr>
                                 <div className="select-size-section ">
-                                    <label className="RobotoRegular">Select Size :</label>
+                                    <label className="RobotoRegular">Select Storage :</label>
                                     <div className="size-div-wrapper d-flex">
                                         {memory && memory.map((memory,index)=>{
                                             return(

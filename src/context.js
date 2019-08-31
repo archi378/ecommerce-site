@@ -212,6 +212,7 @@ class ProductProvider extends Component {
             searchedProduct:[...tempProducts],
             }
         }) 
+        console.log('searched', window.location.href)
     }
     render() {
         return (
