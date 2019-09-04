@@ -27,7 +27,7 @@ export default class SearchedProduct extends Component {
                                     <Link to="/ProductDetails">
                                         <h4 className="brand-title">{item.title}</h4>
                                         </Link>
-                                        <p className="price-text-color">₹&nbsp;{item.price}</p>
+                                        <p className="price-text-color">₹&nbsp;{item.memory[0].price}</p>
                                     </div>
                                 </div>
                             )

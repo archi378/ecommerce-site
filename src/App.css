@@ -77,7 +77,6 @@ body {
   font-weight: 500;
   font-size: 14px;
 }
-
 .h2-Font {
   font-size: 25px;
 }
@@ -462,6 +461,10 @@ input[name='color']:checked+#color-div-outer .color-div {
   text-align: start;
   font-size: 14px;
   /* margin-top: -10px; */
+}
+
+.color-label-font {
+  font-size: 12px !important;
 }
 
 .select-size-section {

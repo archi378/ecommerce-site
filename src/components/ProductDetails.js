@@ -147,7 +147,7 @@ export default class ProductDetails extends Component {
                         </div>
                         <div className="col-xs-12 col-md-6 px-4 pt-4 pt-md-0">
                             <div className="d-flex align-items-center"><h2 className="h2-Font NeueSerifBold d-inline pr-3 margin0">{title}</h2><span className="text-font">({data.selectedColor}-{data.selectedSize})</span></div>
-                            <h4 className="h4-Font price-text-color"> Price: ₹{price}</h4>
+                            <h4 className="h4-Font price-text-color">Price: ₹{data.selectedSize !== '' ? memory.filter(memory => memory.storage === data.selectedSize)[0].price : memory[0].price}</h4>
                             <div className="stars-outer">
                             <i className="far fa-star review-text"></i>
                             <i className="far fa-star review-text"></i>
@@ -169,7 +169,7 @@ export default class ProductDetails extends Component {
                                             <div id="color-div-outer" className="">
                                             <div className="color-div" style={{ backgroundColor : thumb.colorType}}></div>
                                             </div>
-                                            <label className="text-font">{thumb.color}</label>
+                                            <label className="text-font color-label-font">{thumb.color}</label>
                                         </div>
                                     )
                                     })}
@@ -180,9 +180,9 @@ export default class ProductDetails extends Component {
                                         {memory && memory.map((memory,index)=>{
                                             return(
                                                 <div className=" color-div-wrapper mr-3">
-                                                <input type="radio" className="size-radio-btn" name='size' id={`size-${index}`} value={memory} onClick={(e)=>{data.handleSize(e,id)}}/>
+                                                <input type="radio" className="size-radio-btn" name='size' id={`size-${index}`} value={memory.storage} onClick={(e)=>{data.handleSize(e,id)}}/>
                                                 <div id="color-div-outer" className="size-div mr-3">
-                                                 {memory}
+                                                 {memory.storage}
                                                 </div>
                                             </div>
                                             )

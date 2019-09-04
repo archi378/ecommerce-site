@@ -3,10 +3,19 @@ export const storeProducts = [
       id: 1,
       title: "Google Pixel 3a",
       img: "img/product-1.png",
-      price: 31500,
       reviews:23,
       company: "Google",  
-      memory:["16GB","32GB","64GB"],
+      memory:[
+        { storage:"64GB",
+          price:31500
+        },
+        { storage:"128GB",
+          price:35500
+        },
+        { storage:"256GB",
+          price:40500
+        }
+      ],
       images:["img/google/camera.jpg","img/google/battery.jpg","img/google/processor.jpg"],
       thumb:[
         { color: "Black",
@@ -41,10 +50,19 @@ export const storeProducts = [
       id: 2,
       title: "Samsung Galaxy M30",
       img: "img/product-2.png",
-      price: 16000,
       reviews:29,
       company: "Samsung",
-      memory:["16GB","32GB","64GB"],
+      memory:[
+        { storage:"64GB",
+          price:16999
+        },
+        { storage:"128GB",
+          price:18999
+        },
+        { storage:"256GB",
+          price:21999
+        }
+      ],
       thumb:[
         { color: "Black",
           colorType: '#000000',
@@ -79,10 +97,16 @@ export const storeProducts = [
       id: 3,
       title: "HTC Desire 620G",
       img: "img/product-3.png",
-      price: 8000,
       reviews:31,
       company: "HTC",
-      memory:["16GB","32GB"],
+      memory:[
+        { storage:"16GB",
+          price:7999
+        },
+        { storage:"32GB",
+          price:9999
+        } 
+      ],
       thumb:[
         { color: "Black",
           colorType: '#000000',
@@ -117,10 +141,16 @@ export const storeProducts = [
       id: 4,
       title: "HTC Desire 828",
       img: "img/product-4.png",
-      price: 8500,
       reviews:12,
       company: "HTC",
-      memory:["16GB","32GB","64GB"],
+      memory:[
+        { storage:"16GB",
+          price:8500
+        },
+        { storage:"32GB",
+          price:10500
+        },
+      ],
       images:["img/htc/camera.jpg","img/htc/battery.jpg","img/htc/processor.jpg"],
       thumb:[
         { color: "Black",
@@ -155,10 +185,16 @@ export const storeProducts = [
       id: 5,
       title: "HTC U Ultra",
       img: "img/product-5.png",
-      price: 7600,
       reviews:9,
       company: "HTC",
-      memory:["32GB","64GB"],
+      memory:[
+        { storage:"32GB",
+          price:12599
+        },
+        { storage:"64GB",
+          price:14999
+        },
+      ],
       images:["img/htc/camera.jpg","img/htc/battery.jpg","img/htc/processor.jpg"],
       thumb:[
         { color: "Blue",
@@ -188,12 +224,19 @@ export const storeProducts = [
       id: 6,
       title: "Apple Iphone Xs Max",
       img: "img/product-6.png",
-      price: 90000,
       reviews:90,
       company: "Apple",
-      color: ["Black","Blue","White"],
-      colorType:["#000000","#0B1888","#ffffff"],
-      memory:["64GB","256GB","512GB"],
+      memory:[
+        { storage:"128GB",
+          price:79900
+        },
+        { storage:"256GB",
+          price:85999
+        },
+        { storage:"512GB",
+          price:94000
+        }
+      ],
       images:["img/apple/camera.jpg","img/apple/battery.jpg","img/apple/processor.jpg"],
       thumb:[
         { color: "Gold",
@@ -233,12 +276,19 @@ export const storeProducts = [
       id: 7,
       title: "Apple Iphone XR",
       img: "img/product-7.png",
-      price: 80000,
       reviews:41,
       company: "Apple",
-      color: ["Black","Blue","White"],
-      colorType:["#000000","#0B1888","#ffffff"],
-      memory:["64GB","128GB","256GB"],
+      memory:[
+        { storage:"128GB",
+          price:80000
+        },
+        { storage:"256GB",
+          price:85500
+        },
+        { storage:"512GB",
+          price:100999
+        }
+      ],
       images:["img/apple/camera.jpg","img/apple/battery.jpg","img/apple/processor.jpg"],
       thumb:[
         { color: "Red",
@@ -293,10 +343,19 @@ export const storeProducts = [
       id: 8,
       title: "Apple Iphone X",
       img: "img/product-8.png",
-      price: 69000,
       reviews:35,
       company: "Apple",
-      memory:["64GB"],
+      memory:[
+        { storage:"128GB",
+          price:85000
+        },
+        { storage:"256GB",
+          price:91000
+        },
+        { storage:"512GB",
+          price:97899
+        }
+      ],
       images:["img/apple/camera.jpg","img/apple/battery.jpg","img/apple/processor.jpg"],
       thumb:[
         { color: "Space Grey",
@@ -326,10 +385,13 @@ export const storeProducts = [
         id: 9,
         title: "OnePlus 6T",
         img: "img/huawei-1.jpg",
-        price: 41999,
         reviews:206,
         company: "OnePlus",
-        memory:["128GB"],
+        memory:[
+          { storage:"128GB",
+            price:41999
+          },
+        ],
         images:["img/oneplus/camera.jpg","img/oneplus/battery.jpg","img/oneplus/processor.jpg"],
         thumb:[
           { color: "Black",
@@ -364,10 +426,14 @@ export const storeProducts = [
         id: 10,
         title: "Poco F1 by Xiaomi",
         img: "img/redmi-2.png",
-        price: 22999,
         reviews:70,
         company: "Xiaomi",
-        memory:["128GB"],
+        memory:[
+          { storage:"128GB",
+            price:22999
+          },
+          
+        ],
         images:["img/xiaomi/camera.jpg","img/xiaomi/battery.jpg","img/xiaomi/processor.jpg"],
         thumb:[
           { color: "Graphite Black",
@@ -407,10 +473,13 @@ export const storeProducts = [
         id: 11,
         title: "Redmi Mi Note 6 Pro",
         img: "img/nokia-1.jpg",
-        price: 16000,
         reviews:113,
         company: "Xiaomi",
-        memory:["64GB"],
+        memory:[
+          { storage:"64GB",
+            price:16000
+          },
+        ],
         images:["img/xiaomi/camera.jpg","img/xiaomi/battery.jpg","img/xiaomi/processor.jpg"],
         thumb:[
           { color: "Red",
@@ -455,10 +524,13 @@ export const storeProducts = [
         id: 12,
         title: "OnePlus 7 Pro",
         img: "img/oneplus-2.jpg",
-        price: 52999,
         reviews:12,
         company: "OnePlus",
-        memory:["256"],
+        memory:[
+          { storage:"256GB",
+            price:52999
+          }
+        ],
         images:["img/oneplus/camera.jpg","img/oneplus/battery.jpg","img/oneplus/processor.jpg"],
         thumb:[
           { color: "Nebula Blue",
@@ -498,10 +570,16 @@ export const storeProducts = [
         id: 13,
         title: "Honor 9lite",
         img: "img/huawei-3.png",
-        price: 13000,
         reviews:67,
         company: "Huawei",
-        memory:["16GB","32GB","64GB"],
+        memory:[
+          { storage:"32GB",
+            price:12999
+          },
+          { storage:"64GB",
+            price:14999
+          },
+        ],
         images:["img/huawei/camera.jpg","img/huawei/battery.jpg","img/huawei/processor.jpg"],
         thumb:[
           { color: "Blue",
@@ -531,10 +609,13 @@ export const storeProducts = [
         id: 14,
         title: "Redmi 7A",
         img: "img/redmi-1.png",
-        price: 7000,
         reviews:12,
         company: "Xiaomi",
-        memory:["32GB"],
+        memory:[
+          { storage:"32GB",
+            price:7000
+          },
+        ],
         images:["img/xiaomi/camera.jpg","img/xiaomi/battery.jpg","img/xiaomi/processor.jpg"],
         thumb:[
           { color: "Gold",
@@ -569,10 +650,13 @@ export const storeProducts = [
         id: 15,
         title: "Nokia 7.1",
         img: "img/nokia-4.png",
-        price: 16900,
         reviews:33,
         company: "Nokia",
-        memory:["64GB"],
+        memory:[
+          { storage:"64GB",
+            price:16900
+          },
+        ],
         images:["img/nokia/camera.jpg","img/nokia/battery.jpg","img/nokia/processor.jpg"],
         thumb:[
           { color: "Blue",
@@ -607,10 +691,16 @@ export const storeProducts = [
         id: 16,
         title: "Nokia 6.1",
         img: "img/nokia-5.jpg",
-        price: 15000,
         reviews:21,
         company: "Nokia",
-        memory:["64GB"],
+        memory:[
+          { storage:"32GB",
+            price:12999
+          },
+          { storage:"64GB",
+            price:14999
+          },
+        ],   
         images:["img/nokia/camera.jpg","img/nokia/battery.jpg","img/nokia/processor.jpg"],
         thumb:[
           { color: "Blue",
@@ -640,10 +730,16 @@ export const storeProducts = [
         id: 17,
         title: "Google Pixel 3",
         img: "img/pixel-1.png",
-        price: 35000,
         reviews:40,
         company: "Google",
-        memory:["32GB","64GB","128"],
+        memory:[
+          { storage:"64GB",
+            price:34999
+          },
+          { storage:"128GB",
+            price:37999
+          },
+        ],
         images:["img/google/camera.jpg","img/google/battery.jpg","img/google/processor.jpg"],
         thumb:[
           { color: "White",
@@ -683,10 +779,16 @@ export const storeProducts = [
         id: 18,
         title: " Google Pixel XL",
         img: "img/pixel-2.jpg",
-        price: 40000,
         reviews:76,
         company: "Google",
-        memory:["16GB","32GB","64GB"],
+        memory:[
+          { storage:"128GB",
+            price:40999
+          },
+          { storage:"256GB",
+            price:43999
+          },
+        ],
         images:["img/google/camera.jpg","img/google/battery.jpg","img/google/processor.jpg"],
         thumb:[
           { color: "White",
@@ -716,10 +818,16 @@ export const storeProducts = [
         id: 19,
         title: "Samsung Galaxy A70",
         img: "img/samsung-1.png",
-        price: 25000,
         reviews:103,
         company: "Samsung",
-        memory:["32GB","64GB"],
+        memory:[
+          { storage:"64GB",
+            price:24999
+          },
+          { storage:"128GB",
+            price:27899
+          },
+        ],
         images:["img/samsung/camera.jpg","img/samsung/battery.jpg","img/samsung/processor.jpg"],
         thumb:[
           { color: "Black",
@@ -759,10 +867,16 @@ export const storeProducts = [
         id: 20,
         title: "Samsung Galaxy A80",
         img: "img/samsung-2.png",
-        price: 35000,
         reviews:87,
         company: "Samsung",
-        memory:["32GB","64GB","128"],
+        memory:[
+          { storage:"64GB",
+            price:36999
+          },
+          { storage:"128GB",
+            price:38999
+          },
+        ],
         images:["img/samsung/camera.jpg","img/samsung/battery.jpg","img/samsung/processor.jpg"],
         thumb:[
           { color: "Black",
@@ -802,12 +916,20 @@ export const storeProducts = [
         id: 21,
         title: "Samsung Galaxy S10 Plus",
         img: "img/samsung-3.png",
-        price: 17000,
         reviews:54,
         company: "Samsung",
-        color: ["Black","Blue","Silver"],
-        colorType:["#000000","#0B1888","#d9d9d9"],
-        memory:["1TB","128GB","512GB"],
+        memory:[
+          { storage:"128GB",
+            price:40999
+          },
+          { storage:"512GB",
+            price:44999
+          },
+          {
+            storage:"1TB",
+            price:51899
+          }
+        ],
         images:["img/samsung/camera.jpg","img/samsung/battery.jpg","img/samsung/processor.jpg"],
         thumb:[
           { color: "Black",
@@ -857,10 +979,16 @@ export const storeProducts = [
         id: 22,
         title: "Sony Xperia",
         img: "img/sony-1.png",
-        price: 14000,
         reviews:12,
         company: "Sony",
-        memory:["16GB","32GB","64GB"],
+        memory:[
+          { storage:"32GB",
+            price:22999
+          },
+          { storage:"64GB",
+            price:24999
+          },
+        ],
         images:["img/sony/camera.jpg","img/sony/battery.jpg","img/sony/processor.jpg"],
         thumb:[
           { color: "Black",
@@ -891,10 +1019,16 @@ export const storeProducts = [
         id: 23,
         title: " Google Pixel 3a XL",
         img: "img/pixel-3.png",
-        price: 28000,
         reviews:34,
         company: "Google",
-        memory:["32GB","64GB"],
+        memory:[
+          { storage:"128GB",
+            price:32999
+          },
+          { storage:"256GB",
+            price:34999
+          },
+        ],
         images:["img/google/camera.jpg","img/google/battery.jpg","img/google/processor.jpg"],
         thumb:[
           { color: "Black",
@@ -929,10 +1063,16 @@ export const storeProducts = [
         id: 24,
         title: " Google Pixel 3XL",
         img: "img/pixel-4.png",
-        price: 40000,
         reviews:97,
         company: "Google",
-        memory:["32GB","64GB","128"],
+        memory:[
+          { storage:"128GB",
+            price:39999
+          },
+          { storage:"256GB",
+            price:42999
+          },
+        ],
         images:["img/google/camera.jpg","img/google/battery.jpg","img/google/processor.jpg"],
         thumb:[
           { color: "White",
@@ -977,7 +1117,17 @@ export const storeProducts = [
     img: "img/product-1.png",
     price: 31500,
     reviews:23,
-    memory:["16GB","32GB","64GB"],
+    memory:[
+      { storage:"64GB",
+        price:31500
+      },
+      { storage:"128GB",
+        price:35500
+      },
+      { storage:"256GB",
+        price:40500
+      }
+    ],
     company: "google",
     images:["img/google/camera.jpg","img/google/battery.jpg","img/google/processor.jpg"],
     thumb:[

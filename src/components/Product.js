@@ -16,7 +16,7 @@ export default class Product extends Component {
         console.log(id)
     }
     render() {
-        let { id, title, img, price, inCart, inWishlist, color, reviews, thumb, memory}= this.props.product;
+        let { id, title, img, inCart, inWishlist, reviews, thumb, memory}= this.props.product;
         return (
             <div id="productList" className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                 <ProductConsumer>
@@ -67,7 +67,7 @@ export default class Product extends Component {
                             <Link to="/ProductDetails">
                                 <strong className="pl-3">{title}</strong>
                             </Link>
-                            <span className=" price-text price-text-color pl-3 d-block">₹&nbsp;{price}</span>
+                            <span className=" price-text price-text-color pl-3 d-block">₹&nbsp;{memory[0].price}</span>
                             <div className="pl-3 stars-outer">
                             <i className="far fa-star review-text"></i>
                             <i className="far fa-star review-text"></i>

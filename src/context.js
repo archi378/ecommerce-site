@@ -40,7 +40,7 @@ class ProductProvider extends Component {
     handleDetail = (id) =>{
         const product = this.getItem(id);
         this.setState(()=>{
-            return{detailProduct:product,selectedColor:product.thumb[0].color,selectedSize:product.memory[0]}
+            return{detailProduct:product,selectedColor:product.thumb[0].color,selectedSize:product.memory[0].storage}
         },()=>{console.log('hello from state',this.state.selectedColor , this.state.selectedSize)})
 
     }
@@ -51,14 +51,17 @@ class ProductProvider extends Component {
         const product = tempProducts[index];
         product.inCart = true;
         product.count = 1;
-        const price = product.price 
+        console.log(product.memory)
+        console.log(this.state.selectedSize)
+        console.log(product.memory.filter(memory => memory.storage === this.selectedSize))
+        const price = (this.selectedSize !== '' ? product.memory.filter(memory => memory.storage === this.state.selectedSize)[0].price : product.memory[0].price) 
         product.total = price;
         this.setState(()=>{
             return{
                 products:tempProducts,
                 cart:[...this.state.cart,product],
                 selectedColor:(this.state.selectedColor === ''|| this.state.selectedColor === 'Black'? product.thumb[0].color : this.state.selectedColor),
-                selectedSize:(this.state.selectedSize === ''? product.memory[0] : this.state.selectedSize)
+                selectedSize:(this.state.selectedSize === ''? product.memory[0].storage : this.state.selectedSize)
             }
         },()=> {this.addTotals()})
     }
@@ -74,7 +77,7 @@ class ProductProvider extends Component {
                     products:tempProducts,
                     wishlist:[...this.state.wishlist,product],
                     selectedColor:(this.state.selectedColor === ''|| this.state.selectedColor === 'Black'? product.thumb[0].color : this.state.selectedColor),
-                    selectedSize:(this.state.selectedSize === ''? product.memory[0] : this.state.selectedSize)
+                    selectedSize:(this.state.selectedSize === ''? product.memory[0].storage : this.state.selectedSize)
                 }
             },()=> console.log(this.state))
         }
@@ -103,8 +106,9 @@ class ProductProvider extends Component {
         const selectedProduct = tempCart.find(item=>item.id===id);
         const index = tempCart.indexOf(selectedProduct);
         const product = tempCart[index];
+        const price = (this.selectedSize !== '' ? product.memory.filter(memory => memory.storage === this.state.selectedSize)[0].price : product.memory[0].price) 
         product.count = product.count + 1;
-        product.total = product.price * product.count;
+        product.total = price * product.count;
         this.setState(()=>{
             return{cart:[...tempCart]}
         },()=>{this.addTotals()});
@@ -115,8 +119,9 @@ class ProductProvider extends Component {
         const selectedProduct = tempCart.find(item=>item.id===id);
         const index = tempCart.indexOf(selectedProduct);
         const product = tempCart[index];
+        const price = (this.selectedSize !== '' ? product.memory.filter(memory => memory.storage === this.state.selectedSize)[0].price : product.memory[0].price) 
         product.count = (product.count!== 1?product.count - 1:1);
-        product.total = product.price * product.count;
+        product.total = price * product.count;
         this.setState(()=>{
             return{cart:[...tempCart]}
         },()=>{this.addTotals()});
