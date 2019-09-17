@@ -48,8 +48,8 @@ export default class Product extends Component {
                                 data.openModal(id);
                             }} 
                         >
-                        {inCart? <i className="fas fa-cart-arrow-down inCart"></i>
-                        : <i className="fas fa-cart-plus"></i>}
+                        {inCart?  <i className="material-icons">remove_shopping_cart</i>
+                        : <i className="material-icons">add_shopping_cart</i>}
                         </button>
                         {/* <button className="btn btn-primary wishlist-btn"><i className="fas fa-heart"></i></button> */}
                         <div onClick={()=> {
@@ -59,7 +59,7 @@ export default class Product extends Component {
                                     this.handleWishlist(product.id)
                                     console.log(inWishlist)
                                 }}>
-                            <i id={`"wishlist-${id}"`} className="fas fa-heart wishlist-btn "></i>
+                            <i id={`"wishlist-${id}"`} className="material-icons wishlist-btn ">favorite</i>
                             <span id={`"wishlist-effect-${id}"`} className="btn-position d-none"><WishlistBtn /></span>
                         </div>
                         <div className="card-body">
@@ -69,11 +69,11 @@ export default class Product extends Component {
                             </Link>
                             <span className=" price-text price-text-color pl-3 d-block">₹&nbsp;{memory[0].price}</span>
                             <div className="pl-3 stars-outer">
-                            <i className="far fa-star review-text"></i>
-                            <i className="far fa-star review-text"></i>
-                            <i className="far fa-star review-text"></i>
-                            <i className="far fa-star review-text"></i>
-                            <i className="far fa-star review-text"></i>
+                            <i className="material-icons review-star">star_border</i>
+                            <i className="material-icons review-star">star_border</i>
+                            <i className="material-icons review-star">star_border</i>
+                            <i className="material-icons review-star">star_border</i>
+                            <i className="material-icons review-star">star_border</i>
                                 <div className="pl-3 stars-inner">
                                 </div>
                             </div>

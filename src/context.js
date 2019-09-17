@@ -54,7 +54,7 @@ class ProductProvider extends Component {
         console.log(product.memory)
         console.log(this.state.selectedSize)
         console.log(product.memory.filter(memory => memory.storage === this.selectedSize))
-        const price = (this.selectedSize !== '' ? product.memory.filter(memory => memory.storage === this.state.selectedSize)[0].price : product.memory[0].price) 
+        const price = (this.selectedSize !== undefined ? product.memory.filter(memory => memory.storage === this.state.selectedSize)[0].price : product.memory[0].price) 
         product.total = price;
         this.setState(()=>{
             return{

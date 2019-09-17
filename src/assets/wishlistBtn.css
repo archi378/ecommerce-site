@@ -5,11 +5,11 @@
     /* width: 100px; */
 }
 .item {
-    width: 30px;
-    height: 30px;
+    /* width: 30px;
+    height: 30px; */
     position: absolute;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 }
 .item > * {

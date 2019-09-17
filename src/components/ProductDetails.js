@@ -66,8 +66,8 @@ export default class ProductDetails extends Component {
                                     this.handleWishlist(product.id)
                                     console.log(inWishlist)
                                 }}>
-                            <i id={`"wishlist-${id}"`} className="fas fa-heart wishlist-btn top0"></i>
-                            <span id={`"wishlist-effect-${id}"`} className="btn-position d-none"><WishlistBtn /></span>
+                            <i id={`"wishlist-${id}"`} className="material-icons wishlist-btn top0">favorite</i>
+                            <span id={`"wishlist-effect-${id}"`} className="btn-position pdp-wishlist-btn  d-none"><WishlistBtn /></span>
                         </div>
                             {/* <ul className="thumb">
                                 <li><a href="img/google/img-target1.jpg" target="imgBox" onClick={this.onHover}>
@@ -149,15 +149,15 @@ export default class ProductDetails extends Component {
                             <div className="d-flex align-items-center"><h2 className="h2-Font NeueSerifBold d-inline pr-3 margin0">{title}</h2><span className="text-font">({data.selectedColor}-{data.selectedSize})</span></div>
                             <h4 className="h4-Font price-text-color">Price: ₹{data.selectedSize !== '' ? memory.filter(memory => memory.storage === data.selectedSize)[0].price : memory[0].price}</h4>
                             <div className="stars-outer">
-                            <i className="far fa-star review-text"></i>
-                            <i className="far fa-star review-text"></i>
-                            <i className="far fa-star review-text"></i>
-                            <i className="far fa-star review-text"></i>
-                            <i className="far fa-star review-text"></i>
+                            <i className="material-icons review-star">star_border</i>
+                            <i className="material-icons review-star">star_border</i>
+                            <i className="material-icons review-star">star_border</i>
+                            <i className="material-icons review-star">star_border</i>
+                            <i className="material-icons review-star">star_border</i>
                                 <div className="stars-inner">
                                 </div>
                             </div>
-                            <span className="|review-text">({reviews} Reviews )</span>
+                            <span className="pl-1 review-text">({reviews} Reviews )</span>
                             <hr></hr>
                             <div className="mt-3">
                             <label className="RobotoRegular">Select Color :</label>
