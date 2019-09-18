@@ -4,7 +4,8 @@ export const storeProducts = [
       title: "Google Pixel 3a",
       img: "img/product-1.png",
       reviews:23,
-      company: "Google",  
+      company: "Google", 
+      devicePrice: 0, 
       memory:[
         { storage:"64GB",
           price:31500
@@ -52,6 +53,7 @@ export const storeProducts = [
       img: "img/product-2.png",
       reviews:29,
       company: "Samsung",
+      devicePrice: 0,
       memory:[
         { storage:"64GB",
           price:16999
@@ -99,6 +101,7 @@ export const storeProducts = [
       img: "img/product-3.png",
       reviews:31,
       company: "HTC",
+      devicePrice: 0,
       memory:[
         { storage:"16GB",
           price:7999
@@ -143,6 +146,7 @@ export const storeProducts = [
       img: "img/product-4.png",
       reviews:12,
       company: "HTC",
+      devicePrice: 0,
       memory:[
         { storage:"16GB",
           price:8500
@@ -187,6 +191,7 @@ export const storeProducts = [
       img: "img/product-5.png",
       reviews:9,
       company: "HTC",
+      devicePrice: 0,
       memory:[
         { storage:"32GB",
           price:12599
@@ -226,6 +231,7 @@ export const storeProducts = [
       img: "img/product-6.png",
       reviews:90,
       company: "Apple",
+      devicePrice: 0,
       memory:[
         { storage:"128GB",
           price:79900
@@ -278,6 +284,7 @@ export const storeProducts = [
       img: "img/product-7.png",
       reviews:41,
       company: "Apple",
+      devicePrice: 0,
       memory:[
         { storage:"128GB",
           price:80000
@@ -345,6 +352,7 @@ export const storeProducts = [
       img: "img/product-8.png",
       reviews:35,
       company: "Apple",
+      devicePrice: 0,
       memory:[
         { storage:"128GB",
           price:85000
@@ -387,6 +395,7 @@ export const storeProducts = [
         img: "img/huawei-1.jpg",
         reviews:206,
         company: "OnePlus",
+        devicePrice: 0,
         memory:[
           { storage:"128GB",
             price:41999
@@ -428,6 +437,7 @@ export const storeProducts = [
         img: "img/redmi-2.png",
         reviews:70,
         company: "Xiaomi",
+        devicePrice: 0,
         memory:[
           { storage:"128GB",
             price:22999
@@ -475,6 +485,7 @@ export const storeProducts = [
         img: "img/nokia-1.jpg",
         reviews:113,
         company: "Xiaomi",
+        devicePrice: 0,
         memory:[
           { storage:"64GB",
             price:16000
@@ -526,6 +537,7 @@ export const storeProducts = [
         img: "img/oneplus-2.jpg",
         reviews:12,
         company: "OnePlus",
+        devicePrice: 0,
         memory:[
           { storage:"256GB",
             price:52999
@@ -572,6 +584,7 @@ export const storeProducts = [
         img: "img/huawei-3.png",
         reviews:67,
         company: "Huawei",
+        devicePrice: 0,
         memory:[
           { storage:"32GB",
             price:12999
@@ -611,6 +624,7 @@ export const storeProducts = [
         img: "img/redmi-1.png",
         reviews:12,
         company: "Xiaomi",
+        devicePrice: 0,
         memory:[
           { storage:"32GB",
             price:7000
@@ -652,6 +666,7 @@ export const storeProducts = [
         img: "img/nokia-4.png",
         reviews:33,
         company: "Nokia",
+        devicePrice: 0,
         memory:[
           { storage:"64GB",
             price:16900
@@ -693,6 +708,7 @@ export const storeProducts = [
         img: "img/nokia-5.jpg",
         reviews:21,
         company: "Nokia",
+        devicePrice: 0,
         memory:[
           { storage:"32GB",
             price:12999
@@ -732,6 +748,7 @@ export const storeProducts = [
         img: "img/pixel-1.png",
         reviews:40,
         company: "Google",
+        devicePrice: 0,
         memory:[
           { storage:"64GB",
             price:34999
@@ -781,6 +798,7 @@ export const storeProducts = [
         img: "img/pixel-2.jpg",
         reviews:76,
         company: "Google",
+        devicePrice: 0,
         memory:[
           { storage:"128GB",
             price:40999
@@ -820,6 +838,7 @@ export const storeProducts = [
         img: "img/samsung-1.png",
         reviews:103,
         company: "Samsung",
+        devicePrice: 0,
         memory:[
           { storage:"64GB",
             price:24999
@@ -869,6 +888,7 @@ export const storeProducts = [
         img: "img/samsung-2.png",
         reviews:87,
         company: "Samsung",
+        devicePrice: 0,
         memory:[
           { storage:"64GB",
             price:36999
@@ -918,6 +938,7 @@ export const storeProducts = [
         img: "img/samsung-3.png",
         reviews:54,
         company: "Samsung",
+        devicePrice: 0,
         memory:[
           { storage:"128GB",
             price:40999
@@ -981,6 +1002,7 @@ export const storeProducts = [
         img: "img/sony-1.png",
         reviews:12,
         company: "Sony",
+        devicePrice: 0,
         memory:[
           { storage:"32GB",
             price:22999
@@ -1021,6 +1043,7 @@ export const storeProducts = [
         img: "img/pixel-3.png",
         reviews:34,
         company: "Google",
+        devicePrice: 0,
         memory:[
           { storage:"128GB",
             price:32999
@@ -1065,6 +1088,7 @@ export const storeProducts = [
         img: "img/pixel-4.png",
         reviews:97,
         company: "Google",
+        devicePrice: 0,
         memory:[
           { storage:"128GB",
             price:39999
@@ -1115,7 +1139,7 @@ export const storeProducts = [
     id: 1,
     title: "Google Pixel 3a",
     img: "img/product-1.png",
-    price: 31500,
+    devicePrice: 0,
     reviews:23,
     memory:[
       { storage:"64GB",

@@ -4,7 +4,7 @@ import {ProductConsumer } from '../context'
 
 export default class WishlistItem extends Component {
     render() {
-        const{id,img,title,count,total,memory}= this.props.item
+        const{id,img,title,count,total,memory,devicePrice}= this.props.item
         const{removeWishlistItem, handleDetail}= this.props.value
         return (
             <div className="row cart-item text-center mt-2 p-md-3 mobile-padding">
@@ -18,7 +18,7 @@ export default class WishlistItem extends Component {
                         return(
                             <div className="col-7 col-md-3 offset-md-1 pt-md-2 p-3 text-left">
                             <div><span className="text-font d-block"><strong>{title}</strong></span><span className="text-font">({data.selectedColor}-{data.selectedSize})</span></div>
-                            <div><span className="">Price : </span><span className="text-font">₹&nbsp;{memory[0].price}</span></div>
+                            <div><span className="">Price : </span><span className="text-font">₹&nbsp;{devicePrice}</span></div>
                             <div className=" pt-md-2 d-flex">Remove
                             <span className="text-font btn-delete-wrapper" onClick={()=>{removeWishlistItem(id)}}>
                             <i className="far fa-trash-alt btn-delete"></i>

@@ -4,7 +4,7 @@ import {ProductConsumer } from '../context'
 
 export default class CartItem extends Component {
     render() {
-        const{id,img,title,count,total,memory}= this.props.item
+        const{id,img,title,count,total,memory,  devicePrice }= this.props.item
         const{increment, decrement, remove, handleDetail}= this.props.value
         return (  
             <ProductConsumer>
@@ -24,7 +24,9 @@ export default class CartItem extends Component {
                 
                             <div className="col-7 col-md-6 offset-md-1 pt-md-2 p-3 text-left">
                                 <div><span className="text-font d-block">{title}</span><span className="text-font">({data.selectedColor}-{data.selectedSize})</span></div>
-                                <div><span className="price-text-color">Price : </span><span className="text-font price-text-color">₹&nbsp;{data.selectedSize !== undefined ? memory.filter(memory => memory.storage === data.selectedSize)[0].price : memory[0].price}</span></div>
+                                {/* {console.log(data.selectedSize !== undefined ? memory.filter(memory => memory.storage === data.selectedSize)[0].price : memory[0].price)} */}
+                                <div><span className="price-text-color">Price : </span><span className="text-font price-text-color">₹&nbsp;{ devicePrice }</span></div>
+                               
                                 <span className="text-font"><strong>item total : ₹&nbsp;{total}</strong></span>
                                 <div className=" pt-md-2 d-flex align-items-center">Remove
                                 <span className="text-font btn-delete-wrapper" onClick={()=>{remove(id)}}>
