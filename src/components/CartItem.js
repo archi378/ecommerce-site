@@ -23,7 +23,7 @@ export default class CartItem extends Component {
                             </div>
                 
                             <div className="col-7 col-md-6 offset-md-1 pt-md-2 p-3 text-left">
-                                <div><span className="text-font d-block">{title}</span><span className="text-font">({data.selectedColor}-{data.selectedSize})</span></div>
+                                {/* <div><span className="text-font d-block">{title}</span><span className="text-font">({data.selectedColor}-{data.selectedSize})</span></div> */}
                                 {/* {console.log(data.selectedSize !== undefined ? memory.filter(memory => memory.storage === data.selectedSize)[0].price : memory[0].price)} */}
                                 <div><span className="price-text-color">Price : </span><span className="text-font price-text-color">₹&nbsp;{ devicePrice }</span></div>
                                

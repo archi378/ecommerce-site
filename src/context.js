@@ -49,18 +49,25 @@ class ProductProvider extends Component {
         let tempProducts = [...this.state.products];
         const index = tempProducts.indexOf(this.getItem(id));
         const product = tempProducts[index];
-        product.inCart = true;
-        product.count = 1;
+        console.log(tempProducts[index], this.state.cart[index])
+        if(this.state.cart.indexOf(this.getItem(id)) !== -1){
+            product.inCart = true;
+            product.count++;
+        }
+        else {
+            product.inCart = true;
+            product.count = 1;
+        }
         console.log(product.memory)
         console.log(this.state.selectedSize)
         console.log(product.memory.filter(memory => memory.storage === this.state.selectedSize))
         const price = (this.state.selectedSize !== ''? product.memory.filter(memory => memory.storage === this.state.selectedSize)[0].price : product.memory[0].price) 
         product.devicePrice = price;
-        product.total = price;
+        product.total = product.devicePrice*product.count;
         this.setState(()=>{
             return{
                 products:tempProducts,
-                cart:[...this.state.cart,product],
+                cart:(this.state.cart.indexOf(this.getItem(id)) !== -1)? [...this.state.cart]:[...this.state.cart,product],
                 selectedColor:(this.state.selectedColor === ''|| this.state.selectedColor === 'Black'? product.thumb[0].color : this.state.selectedColor),
                 // selectedSize:(this.state.selectedSize === ''? product.memory[0].storage : this.state.selectedSize)
             }
@@ -82,7 +89,7 @@ class ProductProvider extends Component {
                     // selectedSize:(this.state.selectedSize === ''? product.memory[0].storage : this.state.selectedSize)
                 }
             },()=> console.log(this.state))
-            const price = (this.state.selectedSize !== undefined ? product.memory.filter(memory => memory.storage === this.state.selectedSize)[0].price : product.memory[0].price) 
+            const price = (this.state.selectedSize !== '' ? product.memory.filter(memory => memory.storage === this.state.selectedSize)[0].price : product.memory[0].price) 
             product.devicePrice = price;
         }
         else{
